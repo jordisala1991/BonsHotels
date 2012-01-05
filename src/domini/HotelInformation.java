@@ -1,6 +1,5 @@
 package domini;
 
-import java.util.Date;
 import java.util.HashSet;
 
 public class HotelInformation {
@@ -15,7 +14,8 @@ public class HotelInformation {
 		
 	}
 	
-	public HotelInformation(String nomHotel, String desc, String categoria, float avaluacio, HashSet<TipusHabInformation> habs) {
+	public HotelInformation(String nomHotel, String desc, String categoria, float avaluacio,
+			HashSet<TipusHabInformation> habs) {
 		this.nomHotel = nomHotel;
 		this.desc = desc;
 		this.categoria = categoria;
