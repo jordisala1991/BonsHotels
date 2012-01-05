@@ -9,7 +9,7 @@ public class PreuTipusHabitacio {
 	private TipusHabitacio tipusHab;
 	
 	public PreuTipusHabitacio() {
-		
+		tipusHab = new TipusHabitacio();
 	}
 	
 	public PreuTipusHabitacio(float preu, ITipusHabPricingStrategy strategy, TipusHabitacio tipusHab) {

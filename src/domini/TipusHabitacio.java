@@ -12,7 +12,7 @@ public class TipusHabitacio {
 	private HashSet<Habitacio> habitacions;
 	
 	public TipusHabitacio() {
-
+		habitacions = new HashSet<Habitacio>();
 	}
 	
 	public TipusHabitacio(String nom, int capacitat, String descripcio) {
