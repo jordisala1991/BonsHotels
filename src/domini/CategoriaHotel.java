@@ -4,11 +4,11 @@ public class CategoriaHotel {
 	
 	private String nom;
 	
-	CategoriaHotel() {
+	public CategoriaHotel() {
 		
 	}
 	
-	CategoriaHotel(String nom) {
+	public CategoriaHotel(String nom) {
 		this.nom = nom;
 	}
 	
