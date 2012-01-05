@@ -9,7 +9,7 @@ public class TipusHabitacio {
 	private String nom;
 	private int capacitat;
 	private String descripcio;
-	private HashSet <Habitacio> habitacions;
+	private HashSet<Habitacio> habitacions;
 	
 	public TipusHabitacio() {
 
@@ -76,7 +76,7 @@ public class TipusHabitacio {
 		int nhab = 0;
 		while(i.hasNext()) {
 			Habitacio habitacio = i.next();
-			if( habitacio.esDelHotel(nomH) && habitacio.estaDisponible(dIni,dFi)) {
+			if(habitacio.esDelHotel(nomH) && habitacio.estaDisponible(dIni,dFi)) {
 				nhab = habitacio.getNum();
 				break;
 			}	
