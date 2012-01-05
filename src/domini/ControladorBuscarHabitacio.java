@@ -14,7 +14,6 @@ public class ControladorBuscarHabitacio {
 		Iterator<Poblacio> it = poblacions.iterator();
 		while (it.hasNext()) nomPoblacions.add(it.next().getNom());
 		return nomPoblacions;
-		
 	}
 	
 	public HashSet<HotelInformation> buscarHabitacio(String pob, Date dIni, Date dFi, int numOcup) throws Exception {
