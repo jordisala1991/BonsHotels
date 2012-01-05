@@ -2,6 +2,6 @@ package domini;
 
 public interface CtrlClient {
 	
-	public Client getClient(String dni);
+	public abstract Client getClient(String dni);
 
 }

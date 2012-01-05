@@ -5,6 +5,6 @@ import java.util.HashSet;
 
 public interface CtrlPoblacio {
 	
-	public HashSet<Poblacio> tots();
+	public abstract HashSet<Poblacio> tots();
 	
 }
