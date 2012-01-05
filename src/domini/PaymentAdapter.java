@@ -8,9 +8,11 @@ public class PaymentAdapter implements IPaymentAdapter {
 		
 	}
 
-	public boolean pagament(String numTarg, Date dCad, float preuTotal) {
+	public boolean pagament(String numTarg, Date dCad, float preuTotal) throws Exception {
 		CreditCardService ccs = ServiceLocator.getInstance().find("Credit Card Service");
-		return ccs.autoritza(numTarg, dCad, preuTotal, new Date());
+		boolean res = ccs.autoritza(numTarg, dCad, preuTotal, new Date());
+		if (!res) throw new Exception("serveiNoDisponible");
+		return res;
 	}
 
 }
