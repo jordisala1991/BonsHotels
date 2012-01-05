@@ -9,11 +9,12 @@ public class ReservaInformation {
 	private Date dFi;
 	private String hotel;
 	private String tipusHab; 
+	private int numHab;
 	private String dni;
 	private String nomClient;
 	private String cognoms;
 	private String email;
-	float preuTotal;
+	private float preuTotal;
 	
 	public ReservaInformation() {
 		
@@ -72,6 +73,14 @@ public class ReservaInformation {
 	
 	public void setTipusHab(String tipusHab) {
 		this.tipusHab = tipusHab;
+	}
+
+	public int getNumHab() {
+		return numHab;
+	}
+
+	public void setNumHab(int numHab) {
+		this.numHab = numHab;
 	}
 	
 	public String getDni() {
