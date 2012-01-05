@@ -44,11 +44,11 @@ public class Habitacio {
 		this.reserva = reserva;
 	}
 
-	public boolean esDelHotel(String NomH) {
+	public boolean esDelHotel(String nomH) {
 		return this.hotel.etsElHotel(nomH);
 	}
 	
-	public boolean estaDispobible(Date dIni, Date dFi) {
+	public boolean estaDisponible(Date dIni, Date dFi) {
 		boolean estaLliure = true;
 		Iterator<Reserva> it = this.reserva.iterator();
 		while(it.hasNext() && estaLliure) 

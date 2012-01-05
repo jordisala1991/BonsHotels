@@ -63,7 +63,7 @@ public class TipusHabitacio {
 			Iterator<Habitacio> i = habitacions.iterator();
 			while(i.hasNext()) {
 				Habitacio habitacio = i.next();
-				if( habitacio.esDelHotel(nomH) && habitacio.estaDisponible(dIni,dFi)) 
+				if(habitacio.esDelHotel(nomH) && habitacio.estaDisponible(dIni,dFi)) 
 					++disponibles;
 			}
 		}
@@ -77,7 +77,7 @@ public class TipusHabitacio {
 		while(i.hasNext()) {
 			Habitacio habitacio = i.next();
 			if(habitacio.esDelHotel(nomH) && habitacio.estaDisponible(dIni,dFi)) {
-				nhab = habitacio.getNum();
+				nhab = habitacio.getNumero();
 				break;
 			}	
 		}
