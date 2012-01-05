@@ -52,7 +52,7 @@ public class PreuTipusHabitacio {
 	
 	public TipusHabInformation obteDisponiblesDelTipus(Date dIni, Date dFi, int numOcup, String nomH) {
 		TipusHabInformation thi = this.tipusHab.obteDisponibles(dIni,dFi,nomH);
-		thi.setPreu(this.preu);
+		thi.setPreu(strategy.obtePreuReal(this));
 		return thi;
 	}
 	
