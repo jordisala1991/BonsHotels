@@ -32,7 +32,7 @@ public class Hotel {
 	public String getNom() {
 		return nom;
 	}
-	
+
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
@@ -61,6 +61,15 @@ public class Hotel {
 		this.comentari = comentari;
 	}
 	
+	
+	public HashSet<PreuTipusHabitacio> getPreuTipusHabitacio() {
+		return preuTipusHabitacio;
+	}
+
+	public void setPreuTipusHabitacio(HashSet<PreuTipusHabitacio> preuTipusHabitacio) {
+		this.preuTipusHabitacio = preuTipusHabitacio;
+	}
+	
 	public HotelInformation buscarHabsHotel(Date dIni, Date dFi, int numOcup) {
 		HotelInformation hotel = new HotelInformation();
 		HashSet<TipusHabInformation> habs = new HashSet<TipusHabInformation>();
@@ -78,6 +87,7 @@ public class Hotel {
 		hotel.setCategoria(categoriaHotel.getNom());
 		if (comentari.size() > 0) hotel.setAvaluacio(av/comentari.size());
 		hotel.setHabs(habs);
+		return hotel;
 	}
 	
 	public boolean etsElHotel(String nomH) {
@@ -86,8 +96,8 @@ public class Hotel {
 	
 	public ReservaInformation seleccionarHabitacio(Date dIni, Date dFi, String tipusHab) {
 		ReservaInformation res = new ReservaInformation();
-		float preu;
-		int numHab;
+		float preu = 0;
+		int numHab = 0;
 		Iterator<PreuTipusHabitacio> it = preuTipusHabitacio.iterator();
 		while (it.hasNext()) {
 			PreuTipusHabitacio pth = it.next();
