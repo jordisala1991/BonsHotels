@@ -1,2 +1,5 @@
 # generated files
 bin/
+
+# database (Hibernate-HSQL)
+BonsHotelsDB/
