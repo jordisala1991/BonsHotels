@@ -6,7 +6,11 @@ import java.util.Iterator;
 
 public class ControladorBuscarHabitacio {
 	
-	private HashSet<String> obtePoblacions() throws Exception {
+	public ControladorBuscarHabitacio() {
+		
+	}
+	
+	public HashSet<String> obtePoblacions() throws Exception {
 		CtrlPoblacio cp = CtrlDataFactory.getInstance().getCtrlPoblacio();
 		HashSet<Poblacio> poblacions = cp.tots();
 		HashSet<String> nomPoblacions = new HashSet<String>();
