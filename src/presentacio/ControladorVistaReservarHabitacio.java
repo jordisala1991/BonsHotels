@@ -47,18 +47,20 @@ public class ControladorVistaReservarHabitacio {
 			HotelInformation hotels = controladorReservarHabitacio.buscarHabitacio(dIni, dFi, numOcup);
 			vistaReservarHabitacio.mostraHotels(hotels);
 		} catch (Exception e) {
-			if (e.getMessage().equals("sIniNoValida")) 
-				vistaReservarHabitacio.mostraMissatge("La data inici no és una data vàlida");
-			else if (e.getMessage().equals("sFiNoValida")) 
-				vistaReservarHabitacio.mostraMissatge("El data fi no és una data vàlida");
-			else if (e.getMessage().equals("dIniNoPosteriorAvui")) 
-				vistaReservarHabitacio.mostraMissatge("La data inici no és posterior a la data d'avui");
-			else if (e.getMessage().equals("dFiNoPosteriordIni")) 
-				vistaReservarHabitacio.mostraMissatge("La data fi no és posterior a la data inici");
-			else if (e.getMessage().equals("numOcupNoOk")) 
-				vistaReservarHabitacio.mostraMissatge("El nombre d'ocupants ha de ser superior a 0");
-			else if (e.getMessage().equals("hotelsNoDisp")) 
-				vistaReservarHabitacio.mostraMissatge("No hi ha cap hotel disponible");
+			switch (e.getMessage()) {
+				case "sIniNoValida":
+					vistaReservarHabitacio.mostraMissatge("La data inici no és una data vàlida");
+				case "sFiNoValida":
+					vistaReservarHabitacio.mostraMissatge("El data fi no és una data vàlida");
+				case "dIniNoPosteriorAvui":
+					vistaReservarHabitacio.mostraMissatge("La data inici no és posterior a la data d'avui");
+				case "dFiNoPosteriordIni":
+					vistaReservarHabitacio.mostraMissatge("La data fi no és posterior a la data inici");
+				case "numOcupNoOk":
+					vistaReservarHabitacio.mostraMissatge("El nombre d'ocupants ha de ser superior a 0");
+				case "hotelsNoDisp":
+					vistaReservarHabitacio.mostraMissatge("No hi ha cap hotel disponible");
+			}
 		}
 	}
 	
@@ -88,10 +90,12 @@ public class ControladorVistaReservarHabitacio {
 			controladorReservarHabitacio.pagament(numTarg, dCad);
 			vistaReservarHabitacio.mostraMissatgeFi();
 		} catch (Exception e) {
-			if (e.getMessage().equals("cCadNoValida")) 
-				vistaReservarHabitacio.mostraMissatge("La data de caducitat no és una data vàlida");
-			else if (e.getMessage().equals("serveiNoDisponible")) 
-				vistaReservarHabitacio.mostraMissatge("El servei no esta disponible");
+			switch (e.getMessage()) {
+				case "cCadNoValida":
+					vistaReservarHabitacio.mostraMissatge("La data de caducitat no és una data vàlida");
+				case "serveiNoDisponible":
+					vistaReservarHabitacio.mostraMissatge("El servei no esta disponible");
+			}
 		}
 	}
 	
