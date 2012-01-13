@@ -3,8 +3,7 @@ package domini;
 public class ServiceFactory {
 
 	private static ServiceFactory instance = null;
-	private static IPaymentAdapter paymentAdapter = null;
-	
+	private IPaymentAdapter paymentAdapter = null;
 	
 	private ServiceFactory() {
 		
