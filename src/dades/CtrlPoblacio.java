@@ -11,7 +11,9 @@ public class CtrlPoblacio implements domini.CtrlPoblacio {
 	public HashSet<Poblacio> tots() {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = session.beginTransaction();
-		return new HashSet<Poblacio>(session.createQuery("from Poblacio").list());
+		HashSet<Poblacio> poblacions = new HashSet<Poblacio>(session.createQuery("from Poblacio").list());
+		transaction.commit();
+		return poblacions;
 	}
 
 	public Poblacio getPoblacio(String nomPoblacio) throws Exception {
