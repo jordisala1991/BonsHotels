@@ -5,8 +5,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -16,7 +14,7 @@ import javax.swing.SwingConstants;
 public class View1 extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField areaMessage;
+	private static JTextField areaMessage;
 	private ControladorVistaReservarHabitacio controladorVistaReservarHabitacio;
 
 	/**
@@ -48,7 +46,6 @@ public class View1 extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
 		JButton reservarHabitacio = new JButton("Reservar Habitació");
 		reservarHabitacio.addMouseListener(new MouseAdapter() {
 			@Override
@@ -58,7 +55,6 @@ public class View1 extends JFrame {
 		});
 		reservarHabitacio.setBounds(50, 11, 150, 30);
 		contentPane.add(reservarHabitacio);
-		
 		areaMessage = new JTextField();
 		areaMessage.setText("Area Message");
 		areaMessage.setHorizontalAlignment(SwingConstants.CENTER);
@@ -68,4 +64,9 @@ public class View1 extends JFrame {
 		contentPane.add(areaMessage);
 		areaMessage.setColumns(10);
 	}
+	
+	public static void mostraMissatge(String msg) {
+		areaMessage.setText(msg);
+	}
+	
 }

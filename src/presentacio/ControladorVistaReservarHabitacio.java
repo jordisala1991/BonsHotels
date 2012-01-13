@@ -26,7 +26,7 @@ public class ControladorVistaReservarHabitacio {
 			vistaReservarHabitacio.mostraPoblacions(pb);
 		} catch (Exception e) {
 			if (e.getMessage().equals("noHiHaPoblacions")) 
-				vistaReservarHabitacio.mostraMissatge("No hi ha poblacions");
+				vistaReservarHabitacio.mostraMissatge("View1", "No hi ha poblacions");
 		}
 	}
 	
@@ -55,21 +55,21 @@ public class ControladorVistaReservarHabitacio {
 		} catch (Exception e) {
 			switch (e.getMessage()) {
 				case "faltenDades":
-					vistaReservarHabitacio.mostraMissatge("S'han d'introduir totes les dades");
+					vistaReservarHabitacio.mostraMissatge("View2", "S'han d'introduir totes les dades");
 				case "sIniNoValida":
-					vistaReservarHabitacio.mostraMissatge("La data inici no és una data vàlida");
+					vistaReservarHabitacio.mostraMissatge("View2", "La data inici no és una data vàlida");
 				case "sFiNoValida":
-					vistaReservarHabitacio.mostraMissatge("El data fi no és una data vàlida");
+					vistaReservarHabitacio.mostraMissatge("View2", "El data fi no és una data vàlida");
 				case "dIniNoPosteriorAvui":
-					vistaReservarHabitacio.mostraMissatge("La data inici no és posterior a la data d'avui");
+					vistaReservarHabitacio.mostraMissatge("View2", "La data inici no és posterior a la data d'avui");
 				case "dFiNoPosteriordIni":
-					vistaReservarHabitacio.mostraMissatge("La data fi no és posterior a la data inici");
+					vistaReservarHabitacio.mostraMissatge("View2", "La data fi no és posterior a la data inici");
 				case "sNumOcupNoValid":
-					vistaReservarHabitacio.mostraMissatge("El nombre d'ocupants ha de ser un número");
+					vistaReservarHabitacio.mostraMissatge("View2", "El nombre d'ocupants ha de ser un número");
 				case "numOcupNoOk":
-					vistaReservarHabitacio.mostraMissatge("El nombre d'ocupants ha de ser superior a 0");
+					vistaReservarHabitacio.mostraMissatge("View2", "El nombre d'ocupants ha de ser superior a 0");
 				case "hotelsNoDisp":
-					vistaReservarHabitacio.mostraMissatge("No hi ha cap hotel disponible");
+					vistaReservarHabitacio.mostraMissatge("View2", "No hi ha cap hotel disponible");
 			}
 		}
 	}
@@ -81,7 +81,7 @@ public class ControladorVistaReservarHabitacio {
 			vistaReservarHabitacio.mostraPreu(res);
 		} catch (Exception e) {
 			if (e.getMessage().equals("faltenDades")) 
-				vistaReservarHabitacio.mostraMissatge("S'han d'introduir totes les dades");
+				vistaReservarHabitacio.mostraMissatge("View3", "S'han d'introduir totes les dades");
 		}
 	}
 	
@@ -93,9 +93,9 @@ public class ControladorVistaReservarHabitacio {
 		} catch (Exception e) {
 			switch (e.getMessage()) {
 				case "faltenDades":
-					vistaReservarHabitacio.mostraMissatge("S'han d'introduir totes les dades");
+					vistaReservarHabitacio.mostraMissatge("View4", "S'han d'introduir totes les dades");
 				case "clientNoExisteix":
-					vistaReservarHabitacio.mostraMissatge("El client no existeix");
+					vistaReservarHabitacio.mostraMissatge("View4", "El client no existeix");
 			}
 		}
 	}
@@ -114,11 +114,11 @@ public class ControladorVistaReservarHabitacio {
 		} catch (Exception e) {
 			switch (e.getMessage()) {
 				case "faltenDades":
-					vistaReservarHabitacio.mostraMissatge("S'han d'introduir totes les dades");
+					vistaReservarHabitacio.mostraMissatge("View5", "S'han d'introduir totes les dades");
 				case "sCadNoValida":
-					vistaReservarHabitacio.mostraMissatge("La data de caducitat no és una data vàlida");
+					vistaReservarHabitacio.mostraMissatge("View5", "La data de caducitat no és una data vàlida");
 				case "serveiNoDisponible":
-					vistaReservarHabitacio.mostraMissatge("El servei no esta disponible");
+					vistaReservarHabitacio.mostraMissatge("View5", "El servei no esta disponible");
 			}
 		}
 	}

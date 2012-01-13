@@ -1,6 +1,5 @@
 package presentacio;
 
-import java.awt.EventQueue;
 import java.util.HashSet;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -19,7 +18,7 @@ public class View2 extends JFrame {
 
 	private JPanel contentPane;
 	private JScrollPane pane;
-	private JTextField areaMessage;
+	private static JTextField areaMessage;
 	private JList<String> poblacions;
 	private JTextField sIni;
 	private JTextField sFi;
@@ -39,7 +38,6 @@ public class View2 extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
 		JButton ok = new JButton("OK");
 		ok.addMouseListener(new MouseAdapter() {
 			@Override
@@ -50,7 +48,6 @@ public class View2 extends JFrame {
 		});
 		ok.setBounds(10, 231, 117, 23);
 		contentPane.add(ok);
-		
 		JButton cancel = new JButton("Cancel");
 		cancel.addMouseListener(new MouseAdapter() {
 			@Override
@@ -60,23 +57,18 @@ public class View2 extends JFrame {
 		});
 		cancel.setBounds(137, 231, 117, 23);
 		contentPane.add(cancel);
-		
 		JLabel label1 = new JLabel("Població:");
 		label1.setBounds(15, 15, 57, 14);
 		contentPane.add(label1);
-		
 		JLabel label2 = new JLabel("Data inici: (dd/mm/aa)");
 		label2.setBounds(15, 110, 129, 14);
 		contentPane.add(label2);
-		
 		JLabel label3 = new JLabel("Data fi: (dd/mm/aa)");
 		label3.setBounds(15, 150, 129, 14);
 		contentPane.add(label3);
-		
 		JLabel label4 = new JLabel("Nombre ocupants:");
 		label4.setBounds(15, 190, 129, 14);
 		contentPane.add(label4);
-		
 		areaMessage = new JTextField();
 		areaMessage.setHorizontalAlignment(SwingConstants.CENTER);
 		areaMessage.setText("Area Message");
@@ -84,31 +76,31 @@ public class View2 extends JFrame {
 		contentPane.add(areaMessage);
 		areaMessage.setColumns(10);
 		areaMessage.setEditable(false);
-		
 		pane = new JScrollPane();
 		pane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		pane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		pane.setLocation(82, 13);
 		pane.setSize(172, 80);
 		contentPane.add(pane);
-		
 		poblacions = new JList<String>();
 		pane.setViewportView(poblacions);
 		poblacions.setListData((String[]) pb.toArray());
-		
 		sIni = new JTextField();
 		sIni.setColumns(10);
 		sIni.setBounds(154, 107, 100, 20);
 		contentPane.add(sIni);
-		
 		sFi = new JTextField();
 		sFi.setColumns(10);
 		sFi.setBounds(154, 150, 100, 20);
 		contentPane.add(sFi);
-		
 		sNumOcup = new JTextField();
 		sNumOcup.setBounds(154, 190, 100, 20);
 		contentPane.add(sNumOcup);
 		sNumOcup.setColumns(10);
 	}
+	
+	public static void mostraMissatge(String msg) {
+		areaMessage.setText(msg);
+	}
+	
 }
