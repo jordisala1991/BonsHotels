@@ -7,6 +7,6 @@ public interface CtrlPoblacio {
 	
 	public abstract HashSet<Poblacio> tots();
 	
-	public abstract Poblacio getPoblacio(String nomPoblacio);
+	public abstract Poblacio getPoblacio(String nomPoblacio) throws Exception;
 	
 }
