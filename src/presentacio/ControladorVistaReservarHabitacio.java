@@ -1,6 +1,5 @@
 package presentacio;
 
-import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -16,7 +15,7 @@ public class ControladorVistaReservarHabitacio {
 	
 	public ControladorVistaReservarHabitacio() {
 		if (controladorReservarHabitacio == null) 
-			controladorReservarHabitacio = new ControladorRervarHabitacio();
+			controladorReservarHabitacio = new ControladorReservarHabitacio();
 		vistaReservarHabitacio = new VistaReservarHabitacio();
 	}
 	
@@ -50,7 +49,7 @@ public class ControladorVistaReservarHabitacio {
 				numOcup = Integer.parseInt(sNumOcup);
 			} catch (NumberFormatException nfe) { throw new Exception ("sNumOcupNoValid"); }
 			if (numOcup <= 0) throw new Exception ("numOcupNoOk");
-			HotelInformation hotels = controladorReservarHabitacio.buscarHabitacio(dIni, dFi, numOcup);
+			HashSet<HotelInformation> hotels = controladorReservarHabitacio.buscarHabitacio(pob, dIni, dFi, numOcup);
 			vistaReservarHabitacio.mostraHotels(hotels);
 		} catch (Exception e) {
 			switch (e.getMessage()) {
@@ -107,7 +106,7 @@ public class ControladorVistaReservarHabitacio {
 			sdf.setLenient(false);
 			Date dCad;
 			try {
-				dCad = sdf.parse(sCad);
+				dCad = sdf.parse(cCad);
 			} catch (ParseException pe) { throw new Exception ("sCadNoValida"); }
 			controladorReservarHabitacio.pagament(numTarg, dCad);
 			vistaReservarHabitacio.mostraMissatgeFi();

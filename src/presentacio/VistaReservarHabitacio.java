@@ -13,7 +13,7 @@ public class VistaReservarHabitacio {
 		v.setVisible(true);
 	}
 	
-	public void mostraHotels(HotelInformation hotels) {
+	public void mostraHotels(HashSet<HotelInformation> hotels) {
 		View2.getWindows()[0].dispose();
 		View3 v = new View3(hotels);
 		v.setVisible(true);	
