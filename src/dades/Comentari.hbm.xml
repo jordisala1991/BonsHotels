@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ <class name="domini.Comentari" table="COMENTARI">
+  <composite-id class="ComentariId">
+  	<key-property name="nomHotel"></key-property>
+  	<key-property name="dniClient"></key-property>
+  	<key-property name="date"></key-property>
+  </composite-id>
+  <property name="avaluacio" type="java.lang.Float" column="AVALUACIO"/>
+  <property name="descripcio" type="java.lang.String" column="DESCRIPCIO"/>
+  <property name="date" type="java.util.Date" column="DATE"/>
+ </class>
+</hibernate-mapping>

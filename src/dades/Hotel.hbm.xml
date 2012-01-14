@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ <class name="domini.Hotel" table="HOTEL">
+  <id column="NOM" name="nom" type="java.lang.String"/>
+  <property name="descripcio" type="java.lang.String" column="DESCRIPCIO"/>
+  <many-to-one name="categoriaHotel" class="domini.CategoriaHotel" column="NOMCATEGORIA" cascade="all"/>
+  <set name="comentari" cascade="all"> 
+     <key column="NOMHOTEL"/> 
+     <one-to-many class="domini.Comentari"/> 
+  </set>
+  <set name="preuTipusHabitacio" cascade="all"> 
+     <key column="NOMHOTEL"/> 
+     <one-to-many class="domini.PreuTipusHabitacio"/> 
+  </set> 
+ </class>
+</hibernate-mapping>
