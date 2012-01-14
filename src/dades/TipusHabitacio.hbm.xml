@@ -14,7 +14,6 @@
         <property name="descripcio" type="java.lang.String">
             <column name="DESCRIPCIO" />
         </property>
-        
         <set name="habitacions" table="HABITACIO" cascade="all"> 
             <key column="NOM"/> 
             <one-to-many class="domini.Habitacio" />

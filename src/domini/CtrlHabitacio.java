@@ -2,6 +2,6 @@ package domini;
 
 public interface CtrlHabitacio {
 
-	public abstract Habitacio getHabitacio(String nomH, int numero);
+	public abstract Habitacio getHabitacio(String nomH, int numero) throws Exception;
 	
 }
