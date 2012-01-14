@@ -8,18 +8,14 @@ import domini.Habitacio;
 
 public class CtrlHabitacio implements domini.CtrlHabitacio {
 
-	@Override
 	public Habitacio getHabitacio(String nomH, int numero) throws Exception {
 		try {
 			Session session = HibernateUtil.getSessionFactory().openSession();
 			Transaction transaction = session.beginTransaction();
-//			Habitacio habitacio = (Habitacio) session.get(Habitacio.class, nomH, numero);
-
+			Habitacio habitacio = (Habitacio) session.get(Habitacio.class, new HabitacioId(nomH, numero));
 			transaction.commit();
 			return habitacio;
-		} catch (HibernateException he)  { 
-			throw new Exception ("HabitacioNoExisteix"); 
-		} 
+		} catch (HibernateException he)  { throw new Exception ("HabitacioNoExisteix"); }
 	}
 
 }
