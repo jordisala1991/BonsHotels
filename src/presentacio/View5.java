@@ -1,5 +1,6 @@
 package presentacio;
 
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -17,7 +18,7 @@ import domini.ReservaInformation;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class View4 extends JFrame {
+public class View5 extends JFrame {
 
 	private JPanel contentPane;
 	private static JTextField areaMessage;
@@ -28,15 +29,18 @@ public class View4 extends JFrame {
 	private JTextField sNits;
 	private JTextField tipusHab;
 	private JTextField sPreu;
-	private JTextField dni;
+	private JTextField nom;
 	private ControladorVistaReservarHabitacio controladorVistaReservarHabitacio;
+	private JTextField cognoms;
+	private JTextField numCredit;
+	private JTextField sdCad;
 
 	/**
 	 * Create the frame.
 	 */
-	public View4(ReservaInformation res) {
+	public View5(ReservaInformation dades) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 265, 520);
+		setBounds(100, 100, 265, 648);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -70,96 +74,127 @@ public class View4 extends JFrame {
 		lblNewLabel_6.setBounds(22, 279, 46, 14);
 		contentPane.add(lblNewLabel_6);
 		
-		JLabel lblNewLabel_7 = new JLabel("DNI:");
+		JLabel lblNewLabel_7 = new JLabel("Nom:");
 		lblNewLabel_7.setBounds(22, 319, 46, 14);
 		contentPane.add(lblNewLabel_7);
 		
+		JLabel lblCognoms = new JLabel("Cognoms:");
+		lblCognoms.setBounds(22, 359, 81, 14);
+		contentPane.add(lblCognoms);
+		
+		JLabel lblNmCrdit = new JLabel("Núm crèdit:");
+		lblNmCrdit.setBounds(22, 399, 81, 14);
+		contentPane.add(lblNmCrdit);
+		
+		JLabel lblDataCaducitatddmmaa = new JLabel("Data caducitat:\r\n");
+		lblDataCaducitatddmmaa.setBounds(22, 439, 81, 14);
+		contentPane.add(lblDataCaducitatddmmaa);
+		
+		JLabel lblddmmaa = new JLabel("\r\n(dd/mm/aa)");
+		lblddmmaa.setBounds(22, 453, 81, 14);
+		
 		JButton oKButton = new JButton("OK");
+		oKButton.setBounds(28, 510, 89, 23);
 		oKButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				controladorVistaReservarHabitacio.PrOKObteDadesClient(dni.getText());
+				controladorVistaReservarHabitacio.PrOKReservaCreada(numCredit.getText(), sdCad.getText());
 			}
 		});
-		
-		
-		oKButton.setBounds(28, 390, 89, 23);
 		contentPane.add(oKButton);
 		
 		JButton cancelButton = new JButton("Cancel");
+		cancelButton.setBounds(141, 510, 89, 23);
 		cancelButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				controladorVistaReservarHabitacio.PrCancel();
 			}
 		});
-		cancelButton.setBounds(141, 390, 89, 23);
 		contentPane.add(cancelButton);
 		
 		areaMessage = new JTextField();
+		areaMessage.setBounds(22, 555, 225, 20);
 		areaMessage.setHorizontalAlignment(SwingConstants.CENTER);
-		areaMessage.setText("Area message");
+		areaMessage.setText("Area Message");
 		areaMessage.setEditable(false);
-		areaMessage.setBounds(35, 435, 195, 20);
 		contentPane.add(areaMessage);
 		areaMessage.setColumns(10);
 		
 		hotel = new JTextField();
-		hotel.setEditable(false);
 		hotel.setBounds(111, 39, 100, 20);
+		hotel.setEditable(false);
 		contentPane.add(hotel);
 		hotel.setColumns(10);
-		hotel.setText(res.getHotel());
+		hotel.setText(dades.getHotel());
 		
 		poblacio = new JTextField();
-		poblacio.setEditable(false);
 		poblacio.setBounds(111, 79, 100, 20);
+		poblacio.setEditable(false);
 		contentPane.add(poblacio);
 		poblacio.setColumns(10);
-		poblacio.setText(res.getPob());
+		poblacio.setText(dades.getPob());
 		
 		sIn = new JTextField();
-		sIn.setEditable(false);
 		sIn.setBounds(111, 119, 100, 20);
+		sIn.setEditable(false);
 		contentPane.add(sIn);
 		sIn.setColumns(10);
-		sIn.setText(res.getdIni().toString());
+		sIn.setText(dades.getdIni().toString());
 		
 		sFi = new JTextField();
-		sFi.setEditable(false);
 		sFi.setBounds(111, 159, 100, 20);
+		sFi.setEditable(false);
 		contentPane.add(sFi);
 		sFi.setColumns(10);
-		sFi.setText(res.getdFi().toString());
-		
+		sFi.setText(dades.getdFi().toString());
+	
 		sNits = new JTextField();
-		sNits.setEditable(false);
 		sNits.setBounds(111, 199, 100, 20);
+		sNits.setEditable(false);
 		contentPane.add(sNits);
 		sNits.setColumns(10);
-        long diferencia = res.getdFi().getTime() - res.getdIni().getTime();
+        long diferencia = dades.getdFi().getTime() - dades.getdIni().getTime();
         int dias = (int) Math.floor(diferencia / (1000 * 60 * 60 * 24));
         sNits.setText(String.valueOf(dias));
 		
-		
 		tipusHab = new JTextField();
-		tipusHab.setEditable(false);
 		tipusHab.setBounds(111, 239, 100, 20);
+		tipusHab.setEditable(false);
 		contentPane.add(tipusHab);
 		tipusHab.setColumns(10);
-		tipusHab.setText(res.getTipusHab());
+		tipusHab.setText(dades.getTipusHab());
 		
 		sPreu = new JTextField();
-		sPreu.setEditable(false);
 		sPreu.setBounds(111, 279, 100, 20);
+		sPreu.setEditable(false);
 		contentPane.add(sPreu);
 		sPreu.setColumns(10);
-		sPreu.setText(String.valueOf(res.getPreuTotal()));
+		sPreu.setText(String.valueOf(dades.getPreuTotal()));
 		
-		dni = new JTextField();
-		dni.setBounds(111, 319, 100, 20);
-		contentPane.add(dni);
-		dni.setColumns(10);
+		nom = new JTextField();
+		nom.setBounds(111, 319, 100, 20);
+		nom.setEditable(false);
+		contentPane.add(nom);
+		nom.setColumns(10);
+		nom.setText(dades.getNomClient());
+		
+		cognoms = new JTextField();
+		cognoms.setEditable(false);
+		cognoms.setBounds(111, 359, 100, 20);
+		contentPane.add(cognoms);
+		cognoms.setColumns(10);
+		cognoms.setText(dades.getCognoms());
+		
+		numCredit = new JTextField();
+		numCredit.setBounds(111, 399, 100, 20);
+		contentPane.add(numCredit);
+		numCredit.setColumns(10);
+		
+		sdCad = new JTextField();
+		sdCad.setBounds(111, 439, 100, 20);
+		contentPane.add(sdCad);
+		sdCad.setColumns(10);
 	}
 	
 	public static void mostraMissatge(String msg) {
