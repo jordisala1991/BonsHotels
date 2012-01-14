@@ -3,8 +3,8 @@ package domini;
 public class BonsHotels {
 	
 	private static BonsHotels instance = null;
-	private float quotaFixa;
-	private float quotaVariable;
+	private Float quotaFixa;
+	private Float quotaVariable;
 	
 	private BonsHotels() {
 		

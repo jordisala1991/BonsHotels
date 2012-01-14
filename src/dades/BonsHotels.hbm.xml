@@ -4,9 +4,10 @@
 <!-- Generated 14-ene-2012 17:26:50 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
     <class name="domini.BonsHotels" table="BONSHOTELS">
-        <id name="id" type="java.lang.Long">
-            <column name="ID" />
-        </id>
+	    <composite-id class="BonsHotelsId">
+	  		<key-property name="quotaFixa"></key-property>
+	  		<key-property name="quotaVariable"></key-property>
+	 	 </composite-id>
         <property name="quotaFixa" type="float">
             <column name="QUOTAFIXA" />
         </property>
