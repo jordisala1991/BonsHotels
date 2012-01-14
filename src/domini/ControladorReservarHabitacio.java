@@ -29,7 +29,7 @@ public class ControladorReservarHabitacio {
 		return cbh.buscarHabitacio(pob, dIni, dFi, numOcup);
 	}
 	
-	public ReservaInformation seleccionarHabitacio(String hotel, String tipusHab) {
+	public ReservaInformation seleccionarHabitacio(String hotel, String tipusHab) throws Exception {
 		CtrlHotel ch = CtrlDataFactory.getInstance().getHotelController();
 		Hotel h = ch.getHotel(hotel);
 		ReservaInformation res = h.seleccionarHabitacio(this.dInici, this.dFinal, tipusHab);
