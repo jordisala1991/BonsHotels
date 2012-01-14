@@ -35,6 +35,8 @@ public class View4 extends JFrame {
 	 * Create the frame.
 	 */
 	public View4(ReservaInformation res) {
+		setTitle("BonsHotels");
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 265, 520);
 		contentPane = new JPanel();

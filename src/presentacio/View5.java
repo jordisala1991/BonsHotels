@@ -39,6 +39,8 @@ public class View5 extends JFrame {
 	 * Create the frame.
 	 */
 	public View5(ReservaInformation dades) {
+		setResizable(false);
+		setTitle("BonsHotels");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 265, 648);
 		contentPane = new JPanel();
