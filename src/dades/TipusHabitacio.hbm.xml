@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-ene-2012 17:48:54 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="domini.TipusHabitacio" table="TIPUSHABITACIO">
+        
+        <id name="nom" type="java.lang.String">
+            <column name="NOM" />
+        </id>
+        <property name="capacitat" type="int">
+            <column name="CAPACITAT" />
+        </property>
+        <property name="descripcio" type="java.lang.String">
+            <column name="DESCRIPCIO" />
+        </property>
+        
+        <set name="habitacions" table="HABITACIO" cascade="all"> 
+            <key column="NOM"/> 
+            <one-to-many class="domini.Habitacio" />
+        </set>
+    </class>
+</hibernate-mapping>

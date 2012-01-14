@@ -13,6 +13,8 @@
   <mapping resource="dades/CategoriaHotel.hbm.xml"/>
   <mapping resource="dades/Hotel.hbm.xml"/>
   <mapping resource="dades/Comentari.hbm.xml"/>
+  <mapping resource="dades/BonsHotels.hbm.xml"/>
+  <mapping resource="dades/TipusHabitacio.hbm.xml"/>
  </session-factory>
 </hibernate-configuration>
 
