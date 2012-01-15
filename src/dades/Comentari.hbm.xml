@@ -3,7 +3,7 @@
                                    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
  <class name="domini.Comentari" table="COMENTARI">
-  <composite-id class="ComentariId">
+  <composite-id class="dades.ComentariId">
   	<key-property name="nomHotel"/>
   	<key-property name="dniClient"/>
   	<key-property name="date"/>

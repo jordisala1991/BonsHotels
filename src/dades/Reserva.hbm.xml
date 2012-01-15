@@ -3,7 +3,7 @@
                                    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
  <class name="domini.Reserva" table="RESERVA">
-  <composite-id class="ReservaId">
+  <composite-id class="dades.ReservaId">
   	<key-property name="dniClient"/>
   	<key-property name="nomHotel"/>
   	<key-property name="numeroHabitacio"/>
