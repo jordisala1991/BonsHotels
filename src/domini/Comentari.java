@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Comentari {
 
-	private float avaluacio;
+	private Float avaluacio;
 	private String descripcio;
 	private Date date;
 	
@@ -12,17 +12,17 @@ public class Comentari {
 				
 	}
 	
-	public Comentari(float avaluacio, String descripcio, Date date) {
+	public Comentari(Float avaluacio, String descripcio, Date date) {
 		this.avaluacio = avaluacio;
 		this.descripcio = descripcio;
 		this.date = date;
 	}
 
-	public float getAvaluacio() {
+	public Float getAvaluacio() {
 		return avaluacio;
 	}
 
-	public void setAvaluacio(float avaluacio) {
+	public void setAvaluacio(Float avaluacio) {
 		this.avaluacio = avaluacio;
 	}
 

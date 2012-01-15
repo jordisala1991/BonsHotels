@@ -11,7 +11,7 @@ public class ControladorBuscarHabitacio {
 	}
 	
 	public HashSet<String> obtePoblacions() throws Exception {
-		ICtrlPoblacio cp = CtrlDataFactory.getInstance().getPoblacioController();
+		ICtrlPoblacio cp = CtrlDataFactory.getInstance().getCtrlPoblacior();
 		HashSet<Poblacio> poblacions = cp.tots();
 		HashSet<String> nomPoblacions = new HashSet<String>();
 		if (poblacions.size() == 0) throw new Exception("noHiHaPoblacions");
@@ -20,8 +20,8 @@ public class ControladorBuscarHabitacio {
 		return nomPoblacions;
 	}
 	
-	public HashSet<HotelInformation> buscarHabitacio(String pob, Date dIni, Date dFi, int numOcup) throws Exception {
-		ICtrlPoblacio cp = CtrlDataFactory.getInstance().getPoblacioController();
+	public HashSet<HotelInformation> buscarHabitacio(String pob, Date dIni, Date dFi, Integer numOcup) throws Exception {
+		ICtrlPoblacio cp = CtrlDataFactory.getInstance().getCtrlPoblacio();
 		Poblacio p = cp.getPoblacio(pob);
 		return p.buscarHotelsDisponibles(dIni, dFi, numOcup);
 	}

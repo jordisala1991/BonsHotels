@@ -9,25 +9,26 @@ public class ReservaInformation {
 	private Date dFi;
 	private String hotel;
 	private String tipusHab; 
-	private int numHab;
+	private Integer numHab;
 	private String dni;
 	private String nomClient;
 	private String cognoms;
 	private String email;
-	private float preuTotal;
+	private Float preuTotal;
 	
 	public ReservaInformation() {
 		
 	}
 	
 	public ReservaInformation(String pob, Date dIni, Date dFi, String hotel,
-			String tipusHab, String dni, String nomClient, String cognoms,
-			String email, float preuTotal) {
+			String tipusHab, Integer numHab, String dni, String nomClient, String cognoms,
+			String email, Float preuTotal) {
 		this.pob = pob;
 		this.dIni = dIni;
 		this.dFi = dFi;
 		this.hotel = hotel;
 		this.tipusHab = tipusHab;
+		this.numHab = numHab;
 		this.dni = dni;
 		this.nomClient = nomClient;
 		this.cognoms = cognoms;
@@ -75,11 +76,11 @@ public class ReservaInformation {
 		this.tipusHab = tipusHab;
 	}
 
-	public int getNumHab() {
+	public Integer getNumHab() {
 		return numHab;
 	}
 
-	public void setNumHab(int numHab) {
+	public void setNumHab(Integer numHab) {
 		this.numHab = numHab;
 	}
 	
@@ -115,11 +116,11 @@ public class ReservaInformation {
 		this.email = email;
 	}
 	
-	public float getPreuTotal() {
+	public Float getPreuTotal() {
 		return preuTotal;
 	}
 	
-	public void setPreuTotal(float preuTotal) {
+	public void setPreuTotal(Float preuTotal) {
 		this.preuTotal = preuTotal;
 	}
 	

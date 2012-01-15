@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class PreuTipusHabitacio {
 	
-	private float preu;
+	private Float preu;
 	private ITipusHabPricingStrategy strategy;
 	private TipusHabitacio tipusHab;
 	
@@ -12,17 +12,17 @@ public class PreuTipusHabitacio {
 		tipusHab = new TipusHabitacio();
 	}
 	
-	public PreuTipusHabitacio(float preu, ITipusHabPricingStrategy strategy, TipusHabitacio tipusHab) {
+	public PreuTipusHabitacio(Float preu, ITipusHabPricingStrategy strategy, TipusHabitacio tipusHab) {
 		this.preu = preu;
 		this.strategy = strategy;
 		this.tipusHab = tipusHab;
 	}
 
-	public float getPreu() {
+	public Float getPreu() {
 		return preu;
 	}
 
-	public void setPreu(float preu) {
+	public void setPreu(Float preu) {
 		this.preu = preu;
 	}
 
@@ -42,16 +42,16 @@ public class PreuTipusHabitacio {
 		this.tipusHab = tipusHab;
 	}
 
-	public float obtePreu() {
+	public Float obtePreu() {
 		return strategy.obtePreuReal(this);
 	}
 	
-	public boolean esDelTipus(String tipusHab) {
+	public Boolean esDelTipus(String tipusHab) {
 		return this.tipusHab.esDelTipus(tipusHab);
 	}
 	
-	public TipusHabInformation obteDisponiblesDelTipus(Date dIni, Date dFi, int numOcup, String nomH) {
-		TipusHabInformation thi = this.tipusHab.obteDisponibles(dIni,dFi,numOcup,nomH);
+	public TipusHabInformation obteDisponiblesDelTipus(Date dIni, Date dFi, Integer numOcup, String nomH) {
+		TipusHabInformation thi = this.tipusHab.obteDisponibles(dIni, dFi, numOcup, nomH);
 		thi.setPreu(strategy.obtePreuReal(this));
 		return thi;
 	}

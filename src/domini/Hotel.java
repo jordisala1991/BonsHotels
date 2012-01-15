@@ -90,7 +90,7 @@ public class Hotel {
 		return hotel;
 	}
 	
-	public boolean etsElHotel(String nomH) {
+	public Boolean etsElHotel(String nomH) {
 		return nom.equals(nomH);
 	}
 	

@@ -8,7 +8,7 @@ public class Reserva {
 	private Date dataInici;
 	private Date dataFi;
 	private String idReserva;
-	private float preuTotal;
+	private Float preuTotal;
 	private Client client;
 	private Habitacio habitacio;
 	
@@ -17,7 +17,7 @@ public class Reserva {
 	}
 	
 	public Reserva(Date dataReserva, Date dataInici, Date dataFi, String idReserva,
-			float preuTotal, Client client, Habitacio habitacio) {
+			Float preuTotal, Client client, Habitacio habitacio) {
 		this.dataReserva = dataReserva;
 		this.dataInici = dataInici;
 		this.dataFi = dataFi;
@@ -60,11 +60,11 @@ public class Reserva {
 		this.idReserva = idReserva;
 	}
 
-	public float getPreuTotal() {
+	public Float getPreuTotal() {
 		return preuTotal;
 	}
 
-	public void setPreuTotal(float preuTotal) {
+	public void setPreuTotal(Float preuTotal) {
 		this.preuTotal = preuTotal;
 	}
 
@@ -84,7 +84,7 @@ public class Reserva {
 		this.habitacio = habitacio;
 	}
 
-	public boolean EstaEntre(Date dIni, Date dFi) {
+	public Boolean EstaEntre(Date dIni, Date dFi) {
 		return (dIni.before(this.dataInici) && dFi.after(this.dataInici) && dFi.before(this.dataFi)) ||
 			   (dIni.after(this.dataInici)  && dIni.before(this.dataFi)  && dFi.after(this.dataFi))  ||
 			   (dIni.before(this.dataInici) && dFi.after(this.dataFi));

@@ -4,6 +4,6 @@ import java.util.Date;
 
 public interface IPaymentAdapter {
 	
-	public abstract boolean pagament(String numTarg, Date dCad, float preuTotal) throws Exception;
+	public abstract Boolean pagament(String numTarg, Date dCad, Float preuTotal) throws Exception;
 	
 }

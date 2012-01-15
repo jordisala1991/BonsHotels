@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class TipusHabitacio {
 	
 	private String nom;
-	private int capacitat;
+	private Integer capacitat;
 	private String descripcio;
 	private HashSet<Habitacio> habitacions;
 	
@@ -15,7 +15,7 @@ public class TipusHabitacio {
 		habitacions = new HashSet<Habitacio>();
 	}
 	
-	public TipusHabitacio(String nom, int capacitat, String descripcio) {
+	public TipusHabitacio(String nom, Integer capacitat, String descripcio) {
 		this.nom = nom;
 		this.capacitat = capacitat;
 		this.descripcio = descripcio;
@@ -29,11 +29,11 @@ public class TipusHabitacio {
 		this.nom = nom;
 	}
 
-	public int getCapacitat() {
+	public Integer getCapacitat() {
 		return capacitat;
 	}
 
-	public void setCapacitat(int capacitat) {
+	public void setCapacitat(Integer capacitat) {
 		this.capacitat = capacitat;
 	}
 
@@ -53,12 +53,12 @@ public class TipusHabitacio {
 		this.habitacions = habitacions;
 	}
 
-	public boolean esDelTipus(String tipusHab) {
+	public Boolean esDelTipus(String tipusHab) {
 		return tipusHab.equals(this.nom);
 	}
 	
-	public TipusHabInformation obteDisponibles(Date dIni, Date dFi, int numOcup, String nomH) {
-		int disponibles = 0;
+	public TipusHabInformation obteDisponibles(Date dIni, Date dFi, Integer numOcup, String nomH) {
+		Integer disponibles = 0;
 		if(capacitat>=numOcup) {
 			Iterator<Habitacio> i = habitacions.iterator();
 			while(i.hasNext()) {
@@ -67,13 +67,13 @@ public class TipusHabitacio {
 					++disponibles;
 			}
 		}
-		TipusHabInformation thi = new TipusHabInformation(nom,disponibles,-1);
+		TipusHabInformation thi = new TipusHabInformation(nom, disponibles, null);
 		return thi;
 	}
 	
-	public int obteHabitacio(Date dIni, Date dFi, String nomH) {
+	public Integer obteHabitacio(Date dIni, Date dFi, String nomH) {
 		Iterator<Habitacio> i = habitacions.iterator();
-		int nhab = 0;
+		Integer nhab = 0;
 		while(i.hasNext()) {
 			Habitacio habitacio = i.next();
 			if(habitacio.esDelHotel(nomH) && habitacio.estaDisponible(dIni,dFi)) {

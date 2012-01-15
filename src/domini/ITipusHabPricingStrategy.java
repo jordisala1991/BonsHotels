@@ -2,6 +2,6 @@ package domini;
 
 public interface ITipusHabPricingStrategy {
 
-	public abstract float obtePreuReal(PreuTipusHabitacio pth);
+	public abstract Float obtePreuReal(PreuTipusHabitacio pth);
 
 }

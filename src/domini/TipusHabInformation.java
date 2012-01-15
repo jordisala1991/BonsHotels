@@ -3,14 +3,14 @@ package domini;
 public class TipusHabInformation {
 	
 	private String nom;
-	private int num;
-	private float preu;
+	private Integer num;
+	private Float preu;
 	
 	public TipusHabInformation() {
 		
 	}
 	
-	public TipusHabInformation(String nom, int num, float preu) {
+	public TipusHabInformation(String nom, Integer num, Float preu) {
 		this.nom = nom;
 		this.num = num;
 		this.preu = preu;
@@ -24,19 +24,19 @@ public class TipusHabInformation {
 		this.nom = nom;
 	}
 	
-	public int getNum() {
+	public Integer getNum() {
 		return num;
 	}
 	
-	public void setNum(int num) {
+	public void setNum(Integer num) {
 		this.num = num;
 	}
 	
-	public float getPreu() {
+	public Float getPreu() {
 		return preu;
 	}
 	
-	public void setPreu(float preu) {
+	public void setPreu(Float preu) {
 		this.preu = preu;
 	}
 	

@@ -2,26 +2,26 @@ package domini;
 
 public class AbsoluteDiscountPricingStrategy implements ITipusHabPricingStrategy {
 
-	private float descompte;
+	private Float descompte;
 	
 	public AbsoluteDiscountPricingStrategy() {
 		
 	}
 	
-	public AbsoluteDiscountPricingStrategy(float descompte) {
+	public AbsoluteDiscountPricingStrategy(Float descompte) {
 		this.descompte = descompte;
 	}
 
-	public float getDescompte() {
+	public Float getDescompte() {
 		return descompte;
 	}
 
-	public void setDescompte(float descompte) {
+	public void setDescompte(Float descompte) {
 		this.descompte = descompte;
 	}
 	
 	@Override
-	public float obtePreuReal(PreuTipusHabitacio pth) {
+	public Float obtePreuReal(PreuTipusHabitacio pth) {
 		return pth.getPreu()-descompte;
 	}
 

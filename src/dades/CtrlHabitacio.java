@@ -8,7 +8,7 @@ import domini.ICtrlHabitacio;
 
 public class CtrlHabitacio implements ICtrlHabitacio {
 
-	public Habitacio getHabitacio(String nomH, int numero) throws Exception {
+	public Habitacio getHabitacio(String nomH, Integer numero) throws Exception {
 		try {
 			Session session = HibernateUtil.getSessionFactory().openSession();
 			Transaction transaction = session.beginTransaction();

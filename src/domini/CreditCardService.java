@@ -9,7 +9,7 @@ public class CreditCardService {
 		
 	}
 	
-	public boolean autoritza(String numTarg, Date dCad, float preuTotal, Date dAvui) {
+	public Boolean autoritza(String numTarg, Date dCad, Float preuTotal, Date dAvui) {
 		return true;
 	}
 	

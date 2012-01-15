@@ -4,13 +4,13 @@ package dades;
 public class HabitacioId implements java.io.Serializable {
 	
 	private String nomHotel;
-	private int numero;
+	private Integer numero;
 	
 	public HabitacioId() {
 		
 	}
 	
-	public HabitacioId(String nomHotel, int numero) {
+	public HabitacioId(String nomHotel, Integer numero) {
 		this.nomHotel = nomHotel;
 		this.numero = numero;
 	}
@@ -32,11 +32,11 @@ public class HabitacioId implements java.io.Serializable {
 		this.nomHotel = nomHotel;
 	}
 
-	public int getNumero() {
+	public Integer getNumero() {
 		return numero;
 	}
 
-	public void setNumero(int numero) {
+	public void setNumero(Integer numero) {
 		this.numero = numero;
 	}
 

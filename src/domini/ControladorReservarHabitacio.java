@@ -12,7 +12,7 @@ public class ControladorReservarHabitacio {
 	private String hotel;
 	private String tipusHabitacio;
 	private Integer numHabitacio;
-	private float preuTotal;
+	private Float preuTotal;
 	private String dniClient;
 	
 	public ControladorReservarHabitacio() {
@@ -24,7 +24,7 @@ public class ControladorReservarHabitacio {
 		return cbh.obtePoblacions();
 	}
 	
-	public HashSet<HotelInformation> buscarHabitacio(String pob, Date dIni, Date dFi, int numOcup) throws Exception {
+	public HashSet<HotelInformation> buscarHabitacio(String pob, Date dIni, Date dFi, Integer numOcup) throws Exception {
 		ControladorBuscarHabitacio cbh = new ControladorBuscarHabitacio();
 		return cbh.buscarHabitacio(pob, dIni, dFi, numOcup);
 	}

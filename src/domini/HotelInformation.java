@@ -7,14 +7,14 @@ public class HotelInformation {
 	private String nomHotel;
 	private String desc;
 	private String categoria;
-	private float avaluacio;
+	private Float avaluacio;
 	private HashSet<TipusHabInformation> habs;
 	
 	public HotelInformation() {
 		
 	}
 	
-	public HotelInformation(String nomHotel, String desc, String categoria, float avaluacio,
+	public HotelInformation(String nomHotel, String desc, String categoria, Float avaluacio,
 			HashSet<TipusHabInformation> habs) {
 		this.nomHotel = nomHotel;
 		this.desc = desc;
@@ -47,11 +47,11 @@ public class HotelInformation {
 		this.categoria = categoria;
 	}
 	
-	public float getAvaluacio() {
+	public Float getAvaluacio() {
 		return avaluacio;
 	}
 	
-	public void setAvaluacio(float avaluacio) {
+	public void setAvaluacio(Float avaluacio) {
 		this.avaluacio = avaluacio;
 	}
 	
