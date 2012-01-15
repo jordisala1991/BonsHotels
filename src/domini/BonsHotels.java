@@ -1,6 +1,12 @@
 package domini;
 
-public class BonsHotels {
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import dades.HibernateUtil;
+
+@SuppressWarnings("serial")
+public class BonsHotels implements java.io.Serializable {
 	
 	private static BonsHotels instance = null;
 	private Float quotaFixa;
@@ -10,8 +16,16 @@ public class BonsHotels {
 		
 	}
 	
-	public static BonsHotels getInstance() {
-		if (instance == null) instance = new BonsHotels();
+	public static BonsHotels getInstance() throws Exception {
+		if (instance == null) {
+			try {
+				Session session = HibernateUtil.getSessionFactory().openSession();
+				Transaction transaction = session.beginTransaction();
+				instance = (BonsHotels) session.createQuery("from BonsHotels").uniqueResult();
+				transaction.commit();
+				session.close();
+			} catch (HibernateException he) { throw new Exception("BonsHotelsNoExisteix"); }
+		}
 		return instance;
 	}
 
