@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ <class name="domini.ITipusHabPricingStrategy" table="PREUTIPUSHABITACIO">
+  <composite-id class="dades.PreuTipusHabitacioId">
+	<key-property name="nomHotel"></key-property>
+    <key-property name="nomTipusHabitacio"></key-property>
+  </composite-id>
+  <discriminator type="java.lang.String">
+    <formula>
+      case 
+        when PERCENTATGE is not null then 'P' 
+        else 'A' 
+      end
+    </formula>
+  </discriminator>
+  <subclass name="domini.AbsoluteDiscountPricingStrategy" discriminator-value="A">
+      <property name="descompte" column="DESCOMPTE"/>
+  </subclass>
+  <subclass name="domini.PercentDiscountPricingStrategy" discriminator-value="P">
+        <property name="percentatge" column="PERCENTATGE"/>
+  </subclass>
+ </class>
+</hibernate-mapping>

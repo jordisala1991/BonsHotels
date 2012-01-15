@@ -1,21 +1,14 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 14-ene-2012 18:14:23 by Hibernate Tools 3.4.0.CR1 -->
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="domini.PreuTipusHabitacio" table="PREUTIPUSHABITACIO">
-	    <composite-id class="PreuTipusHabitacioId">
-	  		<key-property name="nomHotel"></key-property>
-	  		<key-property name="nomTipusHabitacio"></key-property>
-	 	 </composite-id>
-         <property name="preu" type="float">
-            <column name="PREU" />
-        </property>
-        <many-to-one name="strategy" class="domini.ITipusHabPricingStrategy" fetch="join">
-            <column name="STRATEGY" />
-        </many-to-one>
-        <many-to-one name="tipusHab" class="domini.TipusHabitacio" fetch="join">
-            <column name="TIPUSHAB" />
-        </many-to-one>
-    </class>
+ <class name="domini.PreuTipusHabitacio" table="PREUTIPUSHABITACIO">
+  <composite-id class="dades.PreuTipusHabitacioId">
+	<key-property name="nomHotel"></key-property>
+    <key-property name="nomTipusHabitacio"></key-property>
+  </composite-id>
+  <property name="preu" type="java.util.Float" column="PREU"/>
+  <one-to-one name="strategy" class="domini.ITipusHabPricingStrategy"/>
+  <many-to-one name="tipusHab" class="domini.TipusHabitacio" column="NOMTIPUSHABITACIO" cascade="all"/>
+ </class>
 </hibernate-mapping>
