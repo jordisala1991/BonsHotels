@@ -2,7 +2,6 @@ package domini;
 
 import java.util.Date;
 import java.util.HashSet;
-import java.util.Iterator;
 
 public class ControladorReservarHabitacio {
 	
@@ -30,7 +29,7 @@ public class ControladorReservarHabitacio {
 	}
 	
 	public ReservaInformation seleccionarHabitacio(String hotel, String tipusHab) throws Exception {
-		ICtrlHotel ch = CtrlDataFactory.getInstance().getHotelController();
+		ICtrlHotel ch = CtrlDataFactory.getInstance().getCtrlHotel();
 		Hotel h = ch.getHotel(hotel);
 		ReservaInformation res = h.seleccionarHabitacio(this.dInici, this.dFinal, tipusHab);
 		this.hotel = hotel;
@@ -48,7 +47,7 @@ public class ControladorReservarHabitacio {
 	
 	public ReservaInformation introduirDni(String dni) throws Exception {
 		ReservaInformation res = new ReservaInformation();
-		ICtrlClient cc = CtrlDataFactory.getInstance().getClientController();
+		ICtrlClient cc = CtrlDataFactory.getInstance().getCtrlClient();
 		Client c = cc.getClient(dni);
 		this.dniClient = dni;
 		res.setPob(this.poblacio);
@@ -67,8 +66,8 @@ public class ControladorReservarHabitacio {
 	public void pagament(String numTarg, Date dCard) throws Exception {
 		IPaymentAdapter pa = ServiceFactory.getInstance().getPaymentAdapter();
 		if (pa.pagament(numTarg, dCard, this.preuTotal)) {
-			ICtrlHabitacio ch = CtrlDataFactory.getInstance().getHabitacioController();
-			ICtrlClient cc = CtrlDataFactory.getInstance().getClientController();
+			ICtrlHabitacio ch = CtrlDataFactory.getInstance().getCtrlHabitacio();
+			ICtrlClient cc = CtrlDataFactory.getInstance().getCtrlClient();
 			Habitacio h = ch.getHabitacio(this.hotel, this.numHabitacio);
 			Client c = cc.getClient(this.dniClient);
 			String id = BonsHotels.getInstance().getReservationId();

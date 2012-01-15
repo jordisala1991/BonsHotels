@@ -11,7 +11,7 @@ public class ControladorBuscarHabitacio {
 	}
 	
 	public HashSet<String> obtePoblacions() throws Exception {
-		ICtrlPoblacio cp = CtrlDataFactory.getInstance().getCtrlPoblacior();
+		ICtrlPoblacio cp = CtrlDataFactory.getInstance().getCtrlPoblacio();
 		HashSet<Poblacio> poblacions = cp.tots();
 		HashSet<String> nomPoblacions = new HashSet<String>();
 		if (poblacions.size() == 0) throw new Exception("noHiHaPoblacions");
