@@ -2,14 +2,14 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
                                    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="domini.TipusHabitacio" table="TIPUSHABITACIO">
-        <id column="NOM" name="nom" type="java.lang.String"/>
-        <property name="capacitat" type="java.lang.Integer" column="CAPACITAT"/>
-       <property name="descripcio" type="java.lang.String" column="DESCRIPCIO"/>
-        <set name="habitacions" cascade="all"> 
-            <key column="NOMTIPUSHABITACIO"/> 
-            <one-to-many class="domini.Habitacio" />
-        </set>
-    </class>
+ <class name="domini.TipusHabitacio" table="TIPUSHABITACIO">
+  <id column="NOM" name="nom" type="java.lang.String"/>
+  <property name="capacitat" type="java.lang.Integer" column="CAPACITAT"/>
+  <property name="descripcio" type="java.lang.String" column="DESCRIPCIO"/>
+  <set name="habitacions" cascade="all"> 
+    <key column="NOMTIPUSHABITACIO"/> 
+    <one-to-many class="domini.Habitacio" />
+  </set>
+ </class>
 </hibernate-mapping>
 
