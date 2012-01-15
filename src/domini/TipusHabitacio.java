@@ -3,16 +3,18 @@ package domini;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
 
 public class TipusHabitacio {
 	
 	private String nom;
 	private Integer capacitat;
 	private String descripcio;
-	private HashSet<Habitacio> habitacions;
+	private Set<Habitacio> habitacions;
 	
 	public TipusHabitacio() {
 		habitacions = new HashSet<Habitacio>();
+		capacitat = new Integer(0);
 	}
 	
 	public TipusHabitacio(String nom, Integer capacitat, String descripcio) {
@@ -45,20 +47,20 @@ public class TipusHabitacio {
 		this.descripcio = descripcio;
 	}
 	
-	public HashSet<Habitacio> getHabitacions() {
+	public Set<Habitacio> getHabitacions() {
 		return habitacions;
 	}
 
-	public void setHabitacions(HashSet<Habitacio> habitacions) {
-		this.habitacions = habitacions;
+	public void setHabitacions(Set<Habitacio> hs) {
+		this.habitacions = hs;
 	}
 
-	public Boolean esDelTipus(String tipusHab) {
+	public boolean esDelTipus(String tipusHab) {
 		return tipusHab.equals(this.nom);
 	}
 	
 	public TipusHabInformation obteDisponibles(Date dIni, Date dFi, Integer numOcup, String nomH) {
-		Integer disponibles = 0;
+		Integer disponibles = new Integer(0);
 		if(capacitat>=numOcup) {
 			Iterator<Habitacio> i = habitacions.iterator();
 			while(i.hasNext()) {
@@ -67,7 +69,8 @@ public class TipusHabitacio {
 					++disponibles;
 			}
 		}
-		TipusHabInformation thi = new TipusHabInformation(nom, disponibles, null);
+		Float f = new Float(-1);
+		TipusHabInformation thi = new TipusHabInformation(nom,disponibles,f);
 		return thi;
 	}
 	
@@ -85,3 +88,4 @@ public class TipusHabitacio {
 	}	
 
 }
+

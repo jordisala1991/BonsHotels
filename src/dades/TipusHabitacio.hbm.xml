@@ -1,22 +1,15 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 14-ene-2012 17:48:54 by Hibernate Tools 3.4.0.CR1 -->
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="domini.TipusHabitacio" table="TIPUSHABITACIO">
-        
-        <id name="nom" type="java.lang.String">
-            <column name="NOM" />
-        </id>
-        <property name="capacitat" type="int">
-            <column name="CAPACITAT" />
-        </property>
-        <property name="descripcio" type="java.lang.String">
-            <column name="DESCRIPCIO" />
-        </property>
-        <set name="habitacions" table="HABITACIO" cascade="all"> 
-            <key column="NOM"/> 
+        <id column="NOM" name="nom" type="java.lang.String"/>
+        <property name="capacitat" type="java.lang.Integer" column="CAPACITAT"/>
+       <property name="descripcio" type="java.lang.String" column="DESCRIPCIO"/>
+        <set name="habitacions" cascade="all"> 
+            <key column="NOMTIPUSHABITACIO"/> 
             <one-to-many class="domini.Habitacio" />
         </set>
     </class>
 </hibernate-mapping>
+
