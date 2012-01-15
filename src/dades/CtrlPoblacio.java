@@ -9,6 +9,7 @@ import domini.ICtrlPoblacio;
 
 public class CtrlPoblacio implements ICtrlPoblacio {
 
+	@SuppressWarnings("unchecked")
 	public HashSet<Poblacio> tots() {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = session.beginTransaction();
