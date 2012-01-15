@@ -3,14 +3,15 @@ package domini;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
 
 public class Hotel {
 
 	private String nom;
 	private String descripcio;
 	private CategoriaHotel categoriaHotel;
-	private HashSet<Comentari> comentari;
-	private HashSet<PreuTipusHabitacio> preuTipusHabitacio;
+	private Set<Comentari> comentari;
+	private Set<PreuTipusHabitacio> preuTipusHabitacio;
 	
 	private final long MILLSECS_PER_DAY = 24*60*60*1000; //Milisegons per dia 
 	
@@ -21,7 +22,7 @@ public class Hotel {
 	}
 	
 	public Hotel(String nom, String descripcio, CategoriaHotel categoriaHotel, 
-			HashSet<Comentari> comentari, HashSet<PreuTipusHabitacio> preuTipusHabitacio) {
+			Set<Comentari> comentari, Set<PreuTipusHabitacio> preuTipusHabitacio) {
 		this.nom = nom;
 		this.descripcio = descripcio;
 		this.categoriaHotel = categoriaHotel;
@@ -53,26 +54,26 @@ public class Hotel {
 		this.categoriaHotel = categoriaHotel;
 	}
 
-	public HashSet<Comentari> getComentari() {
+	public Set<Comentari> getComentari() {
 		return comentari;
 	}
 
-	public void setComentari(HashSet<Comentari> comentari) {
+	public void setComentari(Set<Comentari> comentari) {
 		this.comentari = comentari;
 	}
 	
 	
-	public HashSet<PreuTipusHabitacio> getPreuTipusHabitacio() {
+	public Set<PreuTipusHabitacio> getPreuTipusHabitacio() {
 		return preuTipusHabitacio;
 	}
 
-	public void setPreuTipusHabitacio(HashSet<PreuTipusHabitacio> preuTipusHabitacio) {
+	public void setPreuTipusHabitacio(Set<PreuTipusHabitacio> preuTipusHabitacio) {
 		this.preuTipusHabitacio = preuTipusHabitacio;
 	}
 	
 	public HotelInformation buscarHabsHotel(Date dIni, Date dFi, int numOcup) {
 		HotelInformation hotel = new HotelInformation();
-		HashSet<TipusHabInformation> habs = new HashSet<TipusHabInformation>();
+		Set<TipusHabInformation> habs = new HashSet<TipusHabInformation>();
 		Iterator<PreuTipusHabitacio> it = preuTipusHabitacio.iterator();
 		while (it.hasNext()) {
 			PreuTipusHabitacio pth = it.next();

@@ -1,6 +1,7 @@
 package presentacio;
 
-import java.util.HashSet;
+
+import java.util.Set;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -29,7 +30,7 @@ public class View2 extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public View2(HashSet<String> pb) {
+	public View2(Set<String> pb) {
 		setTitle("BonsHotels");
 		controladorVistaReservarHabitacio = new ControladorVistaReservarHabitacio();
 		setResizable(false);

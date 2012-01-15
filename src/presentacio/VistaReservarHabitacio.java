@@ -1,19 +1,20 @@
 package presentacio;
 
-import java.util.HashSet;
+
+import java.util.Set;
 import javax.swing.JFrame;
 import domini.HotelInformation;
 import domini.ReservaInformation;
 
 public class VistaReservarHabitacio {
 
-	public void mostraPoblacions(HashSet<String> pb) {
+	public void mostraPoblacions(Set<String> pb) {
 		View1.getWindows()[0].dispose();
 		View2 v = new View2(pb);
 		v.setVisible(true);
 	}
 	
-	public void mostraHotels(HashSet<HotelInformation> hotels) {
+	public void mostraHotels(Set<HotelInformation> hotels) {
 		View2.getWindows()[0].dispose();
 		View3 v = new View3(hotels);
 		v.setVisible(true);	

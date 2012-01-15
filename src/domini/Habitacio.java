@@ -1,20 +1,20 @@
 package domini;
 
 import java.util.Date;
-import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
 
 public class Habitacio {
 
 	private Integer numero;
 	private Hotel hotel;
-	private HashSet<Reserva> reserva;
+	private Set<Reserva> reserva;
 	
 	public Habitacio() {
-		
+
 	}
 
-	public Habitacio(Integer numero, Hotel hotel, HashSet<Reserva> reserva) {
+	public Habitacio(Integer numero, Hotel hotel, Set<Reserva> reserva) {
 		this.numero = numero;
 		this.hotel = hotel;
 		this.reserva = reserva;
@@ -36,11 +36,11 @@ public class Habitacio {
 		this.hotel = hotel;
 	}
 
-	public HashSet<Reserva> getReserva() {
+	public Set<Reserva> getReserva() {
 		return reserva;
 	}
 
-	public void setReserva(HashSet<Reserva> reserva) {
+	public void setReserva(Set<Reserva> reserva) {
 		this.reserva = reserva;
 	}
 

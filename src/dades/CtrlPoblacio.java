@@ -1,6 +1,8 @@
 package dades;
 
 import java.util.HashSet;
+import java.util.Set;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -10,10 +12,10 @@ import domini.ICtrlPoblacio;
 public class CtrlPoblacio implements ICtrlPoblacio {
 
 	@SuppressWarnings("unchecked")
-	public HashSet<Poblacio> tots() {
+	public Set<Poblacio> tots() {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = session.beginTransaction();
-		HashSet<Poblacio> poblacions = new HashSet<Poblacio>(session.createQuery("from Poblacio").list());
+		Set<Poblacio> poblacions = new HashSet<Poblacio>(session.createQuery("from Poblacio").list());
 		transaction.commit();
 		return poblacions;
 	}

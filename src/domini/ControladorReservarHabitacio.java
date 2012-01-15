@@ -1,7 +1,7 @@
 package domini;
 
 import java.util.Date;
-import java.util.HashSet;
+import java.util.Set;
 
 public class ControladorReservarHabitacio {
 	
@@ -18,12 +18,12 @@ public class ControladorReservarHabitacio {
 		
 	}
 	
-	public HashSet<String> obtePoblacions() throws Exception {
+	public Set<String> obtePoblacions() throws Exception {
 		ControladorBuscarHabitacio cbh = new ControladorBuscarHabitacio();
 		return cbh.obtePoblacions();
 	}
 	
-	public HashSet<HotelInformation> buscarHabitacio(String pob, Date dIni, Date dFi, Integer numOcup) throws Exception {
+	public Set<HotelInformation> buscarHabitacio(String pob, Date dIni, Date dFi, Integer numOcup) throws Exception {
 		ControladorBuscarHabitacio cbh = new ControladorBuscarHabitacio();
 		return cbh.buscarHabitacio(pob, dIni, dFi, numOcup);
 	}

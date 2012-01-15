@@ -3,7 +3,8 @@ package presentacio;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashSet;
+import java.util.Set;
+
 import domini.ControladorReservarHabitacio;
 import domini.ReservaInformation;
 import domini.HotelInformation;
@@ -21,7 +22,7 @@ public class ControladorVistaReservarHabitacio {
 	
 	public void PrReservarHabitacio() {
 		try {
-			HashSet<String> pb = controladorReservarHabitacio.obtePoblacions();
+			Set<String> pb = controladorReservarHabitacio.obtePoblacions();
 			vistaReservarHabitacio.mostraPoblacions(pb);
 		} catch (Exception e) {
 			if (e.getMessage().equals("noHiHaPoblacions")) 
@@ -49,7 +50,7 @@ public class ControladorVistaReservarHabitacio {
 				numOcup = Integer.parseInt(sNumOcup);
 			} catch (NumberFormatException nfe) { throw new Exception ("sNumOcupNoValid"); }
 			if (numOcup <= 0) throw new Exception ("numOcupNoOk");
-			HashSet<HotelInformation> hotels = controladorReservarHabitacio.buscarHabitacio(pob, dIni, dFi, numOcup);
+			Set<HotelInformation> hotels = controladorReservarHabitacio.buscarHabitacio(pob, dIni, dFi, numOcup);
 			vistaReservarHabitacio.mostraHotels(hotels);
 		} catch (Exception e) {
 			switch (e.getMessage()) {

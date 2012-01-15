@@ -3,17 +3,18 @@ package domini;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
 
 public class Poblacio {
 
 	private String nom;
-	private HashSet<Hotel> hotels;
+	private Set<Hotel> hotels;
 
 	public Poblacio() {
 		hotels = new HashSet<Hotel>();
 	}
 	
-	public Poblacio(String nom, HashSet<Hotel> hotels) {
+	public Poblacio(String nom, Set<Hotel> hotels) {
 		this.nom = nom;
 		this.hotels = hotels;
 	}
@@ -26,16 +27,16 @@ public class Poblacio {
 		this.nom = nom;
 	}
 
-	public HashSet<Hotel> getHotels() {
+	public Set<Hotel> getHotels() {
 		return hotels;
 	}
 
-	public void setHotels(HashSet<Hotel> hotels) {
+	public void setHotels(Set<Hotel> hotels) {
 		this.hotels = hotels;
 	}
 
-	public HashSet<HotelInformation> buscarHotelsDisponibles(Date dIni, Date dFi, int numOcup) throws Exception {
-		HashSet<HotelInformation> hotelsinfo = new HashSet<HotelInformation>();
+	public Set<HotelInformation> buscarHotelsDisponibles(Date dIni, Date dFi, int numOcup) throws Exception {
+		Set<HotelInformation> hotelsinfo = new HashSet<HotelInformation>();
 		Iterator<Hotel> it = hotels.iterator();
 		while (it.hasNext()) {
 			Hotel h = it.next();

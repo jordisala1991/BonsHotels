@@ -10,6 +10,7 @@ import javax.swing.SwingConstants;
 import domini.ReservaInformation;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.text.SimpleDateFormat;
 
 @SuppressWarnings("serial")
 public class View4 extends JFrame {
@@ -30,6 +31,7 @@ public class View4 extends JFrame {
 	 * Create the frame.
 	 */
 	public View4(ReservaInformation res) {
+		controladorVistaReservarHabitacio = new ControladorVistaReservarHabitacio();
 		setTitle("BonsHotels");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -115,19 +117,21 @@ public class View4 extends JFrame {
 		poblacio.setColumns(10);
 		poblacio.setText(res.getPob());
 		
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy");
+		
 		sIn = new JTextField();
 		sIn.setEditable(false);
 		sIn.setBounds(111, 119, 100, 20);
 		contentPane.add(sIn);
 		sIn.setColumns(10);
-		sIn.setText(res.getdIni().toString());
+		sIn.setText(sdf.format(res.getdIni()));
 		
 		sFi = new JTextField();
 		sFi.setEditable(false);
 		sFi.setBounds(111, 159, 100, 20);
 		contentPane.add(sFi);
 		sFi.setColumns(10);
-		sFi.setText(res.getdFi().toString());
+		sFi.setText(sdf.format(res.getdFi()));
 		
 		sNits = new JTextField();
 		sNits.setEditable(false);
