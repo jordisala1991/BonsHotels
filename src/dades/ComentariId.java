@@ -2,11 +2,16 @@ package dades;
 
 import java.util.Date;
 
+@SuppressWarnings("serial")
 public class ComentariId implements java.io.Serializable {
 
 	private String nomHotel;
 	private String dniClient;
 	private Date date;
+	
+	public ComentariId() {
+		
+	}
 	
 	public ComentariId(String nomHotel, String dniClient, Date date) {
 		this.nomHotel = nomHotel;
@@ -14,7 +19,6 @@ public class ComentariId implements java.io.Serializable {
 		this.date = date;
 	}
 
-	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -26,7 +30,30 @@ public class ComentariId implements java.io.Serializable {
 		return result;
 	}
 
-	@Override
+	public String getNomHotel() {
+		return nomHotel;
+	}
+
+	public void setNomHotel(String nomHotel) {
+		this.nomHotel = nomHotel;
+	}
+
+	public String getDniClient() {
+		return dniClient;
+	}
+
+	public void setDniClient(String dniClient) {
+		this.dniClient = dniClient;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;

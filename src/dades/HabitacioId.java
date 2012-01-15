@@ -1,16 +1,20 @@
 package dades;
 
+@SuppressWarnings("serial")
 public class HabitacioId implements java.io.Serializable {
 	
 	private String nomHotel;
 	private int numero;
+	
+	public HabitacioId() {
+		
+	}
 	
 	public HabitacioId(String nomHotel, int numero) {
 		this.nomHotel = nomHotel;
 		this.numero = numero;
 	}
 
-	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -20,7 +24,22 @@ public class HabitacioId implements java.io.Serializable {
 		return result;
 	}
 
-	@Override
+	public String getNomHotel() {
+		return nomHotel;
+	}
+
+	public void setNomHotel(String nomHotel) {
+		this.nomHotel = nomHotel;
+	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
