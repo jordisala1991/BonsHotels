@@ -11,6 +11,7 @@ import java.awt.event.MouseEvent;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 
+@SuppressWarnings("serial")
 public class View1 extends JFrame {
 
 	private JPanel contentPane;
