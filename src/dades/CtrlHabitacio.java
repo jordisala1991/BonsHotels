@@ -4,9 +4,9 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import domini.Habitacio;
+import domini.ICtrlHabitacio;
 
-
-public class CtrlHabitacio implements domini.CtrlHabitacio {
+public class CtrlHabitacio implements ICtrlHabitacio {
 
 	public Habitacio getHabitacio(String nomH, int numero) throws Exception {
 		try {

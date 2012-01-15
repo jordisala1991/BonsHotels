@@ -3,10 +3,10 @@ package domini;
 public class CtrlDataFactory {
 
 	private static CtrlDataFactory instance = null;
-	private static CtrlHotel HotelController = null;
-	private static CtrlHabitacio HabitacioController = null;
-	private static CtrlPoblacio PoblacioController = null;
-	private static CtrlClient ClientController = null;
+	private static ICtrlHotel HotelController = null;
+	private static ICtrlHabitacio HabitacioController = null;
+	private static ICtrlPoblacio PoblacioController = null;
+	private static ICtrlClient ClientController = null;
 
 	private CtrlDataFactory() {
 		
@@ -17,22 +17,22 @@ public class CtrlDataFactory {
 		return instance;
 	}
 
-	public static CtrlHotel getHotelController() {
+	public static ICtrlHotel getHotelController() {
 		if (instance == null) instance = new CtrlDataFactory();
 		return HotelController;
 	}
 
-	public static CtrlHabitacio getHabitacioController() {
+	public static ICtrlHabitacio getHabitacioController() {
 		if (instance == null) instance = new CtrlDataFactory();
 		return HabitacioController;
 	}
 
-	public static CtrlPoblacio getPoblacioController() {
+	public static ICtrlPoblacio getPoblacioController() {
 		if (instance == null) instance = new CtrlDataFactory();
 		return PoblacioController;
 	}
 
-	public static CtrlClient getClientController() {
+	public static ICtrlClient getClientController() {
 		if (instance == null) instance = new CtrlDataFactory();
 		return ClientController;
 	}

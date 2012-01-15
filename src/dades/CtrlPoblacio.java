@@ -5,8 +5,9 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import domini.Poblacio;
+import domini.ICtrlPoblacio;
 
-public class CtrlPoblacio implements domini.CtrlPoblacio {
+public class CtrlPoblacio implements ICtrlPoblacio {
 
 	public HashSet<Poblacio> tots() {
 		Session session = HibernateUtil.getSessionFactory().openSession();

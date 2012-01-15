@@ -1,9 +1,8 @@
 package domini;
 
-
 import java.util.HashSet;
 
-public interface CtrlPoblacio {
+public interface ICtrlPoblacio {
 	
 	public abstract HashSet<Poblacio> tots();
 	

@@ -4,8 +4,9 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import domini.Hotel;
+import domini.ICtrlHotel;
 
-public class CtrlHotel implements domini.CtrlHotel {
+public class CtrlHotel implements ICtrlHotel {
 
 	public Hotel getHotel(String nom) throws Exception {
 		try {

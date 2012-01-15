@@ -30,7 +30,7 @@ public class ControladorReservarHabitacio {
 	}
 	
 	public ReservaInformation seleccionarHabitacio(String hotel, String tipusHab) throws Exception {
-		CtrlHotel ch = CtrlDataFactory.getInstance().getHotelController();
+		ICtrlHotel ch = CtrlDataFactory.getInstance().getHotelController();
 		Hotel h = ch.getHotel(hotel);
 		ReservaInformation res = h.seleccionarHabitacio(this.dInici, this.dFinal, tipusHab);
 		this.hotel = hotel;
@@ -46,9 +46,9 @@ public class ControladorReservarHabitacio {
 		return res;
 	}
 	
-	public ReservaInformation introduirDni(String dni) {
+	public ReservaInformation introduirDni(String dni) throws Exception {
 		ReservaInformation res = new ReservaInformation();
-		CtrlClient cc = CtrlDataFactory.getInstance().getClientController();
+		ICtrlClient cc = CtrlDataFactory.getInstance().getClientController();
 		Client c = cc.getClient(dni);
 		this.dniClient = dni;
 		res.setPob(this.poblacio);
@@ -67,8 +67,8 @@ public class ControladorReservarHabitacio {
 	public void pagament(String numTarg, Date dCard) throws Exception {
 		IPaymentAdapter pa = ServiceFactory.getInstance().getPaymentAdapter();
 		if (pa.pagament(numTarg, dCard, this.preuTotal)) {
-			CtrlHabitacio ch = CtrlDataFactory.getInstance().getHabitacioController();
-			CtrlClient cc = CtrlDataFactory.getInstance().getClientController();
+			ICtrlHabitacio ch = CtrlDataFactory.getInstance().getHabitacioController();
+			ICtrlClient cc = CtrlDataFactory.getInstance().getClientController();
 			Habitacio h = ch.getHabitacio(this.hotel, this.numHabitacio);
 			Client c = cc.getClient(this.dniClient);
 			String id = BonsHotels.getInstance().getReservationId();

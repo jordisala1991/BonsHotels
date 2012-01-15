@@ -1,6 +1,6 @@
 package domini;
 
-public interface CtrlHotel {
+public interface ICtrlHotel {
 	
 	public abstract Hotel getHotel(String nom) throws Exception;
 }
