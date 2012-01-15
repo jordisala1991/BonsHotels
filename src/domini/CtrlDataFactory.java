@@ -1,12 +1,17 @@
 package domini;
 
+import dades.CtrlHabitacio;
+import dades.CtrlHotel;
+import dades.CtrlPoblacio;
+import dades.CtrlClient;
+
 public class CtrlDataFactory {
 
 	private static CtrlDataFactory instance = null;
-	private ICtrlHotel HotelController = null;
-	private ICtrlHabitacio HabitacioController = null;
-	private ICtrlPoblacio PoblacioController = null;
-	private ICtrlClient ClientController = null;
+	private ICtrlHotel hotelController = null;
+	private ICtrlHabitacio habitacioController = null;
+	private ICtrlPoblacio poblacioController = null;
+	private ICtrlClient clientController = null;
 
 	private CtrlDataFactory() {
 		
@@ -18,23 +23,23 @@ public class CtrlDataFactory {
 	}
 
 	public ICtrlHotel getCtrlHotel() {
-		if (instance == null) instance = new CtrlDataFactory();
-		return HotelController;
+		if (hotelController == null) hotelController = new CtrlHotel();
+		return hotelController;
 	}
 
 	public ICtrlHabitacio getCtrlHabitacio() {
-		if (instance == null) instance = new CtrlDataFactory();
-		return HabitacioController;
+		if (habitacioController == null) habitacioController = new CtrlHabitacio();
+		return habitacioController;
 	}
 
 	public ICtrlPoblacio getCtrlPoblacio() {
-		if (instance == null) instance = new CtrlDataFactory();
-		return PoblacioController;
+		if (poblacioController == null) poblacioController = new CtrlPoblacio();
+		return poblacioController;
 	}
 
 	public ICtrlClient getCtrlClient() {
-		if (instance == null) instance = new CtrlDataFactory();
-		return ClientController;
+		if (clientController == null) clientController = new CtrlClient();
+		return clientController;
 	}
 	
 }
