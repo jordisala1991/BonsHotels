@@ -7,12 +7,12 @@
   	<key-property name="nomHotel"/>
   	<key-property name="numero"/>
   </composite-id>
-  <property name="numero" type="java.lang.Integer" column="DESCRIPCIO"/>
+  <property name="numero" type="java.lang.Integer" column="NUMERO"/>
   <many-to-one name="hotel" class="domini.Hotel" column="NOMHOTEL" cascade="all"/>
   <set name="reserva" cascade="all">
     <key>
       <column name="NOMHOTEL"/>
-      <column name="NUMERO"/>
+      <column name="NUMEROHABITACIO"/>
     </key>
     <one-to-many class="domini.Reserva"/> 
   </set>
