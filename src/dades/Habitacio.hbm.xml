@@ -2,16 +2,19 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
                                    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-  <class name="domini.Habitacio" table="HABITACIO">
+ <class name="domini.Habitacio" table="HABITACIO">
   <composite-id class="dades.HabitacioId">
   	<key-property name="nomHotel"/>
   	<key-property name="numero"/>
   </composite-id>
+  <property name="numero" type="java.lang.Integer" column="DESCRIPCIO"/>
   <many-to-one name="hotel" class="domini.Hotel" column="NOMHOTEL" cascade="all"/>
-  <set name="reserva" cascade="all"> 
-     <key column="NOMHOTEL"/> 
-     <key column="NUMERO"/> 
-     <one-to-many class="domini.Reserva"/> 
+  <set name="reserva" cascade="all">
+    <key>
+      <column name="NOMHOTEL"/>
+      <column name="NUMERO"/>
+    </key>
+    <one-to-many class="domini.Reserva"/> 
   </set>
  </class>
 </hibernate-mapping>

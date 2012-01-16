@@ -13,7 +13,7 @@
   <property name="dataInici" type="java.util.Date" column="DATAINICI"/>
   <property name="dataFi" type="java.util.Date" column="DATAFI"/>
   <property name="idReserva" type="java.lang.String" column="IDRESERVA"/>
-  <property name="preuTotal" type="java.util.Float" column="PREUTOTAL"/>
+  <property name="preuTotal" type="java.lang.Float" column="PREUTOTAL"/>
   <many-to-one name="client" class="domini.Client" column="DNICLIENT" cascade="all"/>
   <many-to-one name="habitacio" class="domini.Habitacio" cascade="all">
   	<column name="DNICLIENT"></column>

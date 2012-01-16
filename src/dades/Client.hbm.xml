@@ -7,6 +7,5 @@
   <property name="nom" type="java.lang.String" column="NOM"/>
   <property name="cognoms" type="java.lang.String" column="COGNOMS"/>
   <property name="email" type="java.lang.String" column="EMAIL"/>
-  </set>
  </class>
 </hibernate-mapping>

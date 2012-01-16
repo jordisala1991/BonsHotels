@@ -18,6 +18,9 @@
   <mapping resource="dades/PreuTipusHabitacio.hbm.xml"/>
   <mapping resource="dades/ITipusHabPricingStrategy.hbm.xml"/>
   <mapping resource="dades/Reserva.hbm.xml"/>
+  <mapping resource="dades/Habitacio.hbm.xml"/>
+  <mapping resource="dades/Poblacio.hbm.xml"/>
+  <mapping resource="dades/Client.hbm.xml"/>
  </session-factory>
 </hibernate-configuration>
 

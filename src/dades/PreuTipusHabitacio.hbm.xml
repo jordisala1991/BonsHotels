@@ -4,10 +4,10 @@
 <hibernate-mapping>
  <class name="domini.PreuTipusHabitacio" table="PREUTIPUSHABITACIO">
   <composite-id class="dades.PreuTipusHabitacioId">
-	<key-property name="nomHotel"></key-property>
-    <key-property name="nomTipusHabitacio"></key-property>
+	<key-property name="nomHotel"/>
+    <key-property name="nomTipusHabitacio"/>
   </composite-id>
-  <property name="preu" type="java.util.Float" column="PREU"/>
+  <property name="preu" type="java.lang.Float" column="PREU"/>
   <one-to-one name="strategy" class="domini.ITipusHabPricingStrategy"/>
   <many-to-one name="tipusHab" class="domini.TipusHabitacio" column="NOMTIPUSHABITACIO" cascade="all"/>
  </class>
