@@ -1,6 +1,5 @@
 package domini;
 
-
 import java.util.Set;
 
 public class HotelInformation {

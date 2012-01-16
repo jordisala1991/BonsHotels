@@ -1,6 +1,5 @@
 package presentacio;
 
-
 import java.util.Set;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
