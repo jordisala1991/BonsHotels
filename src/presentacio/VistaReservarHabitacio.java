@@ -1,6 +1,6 @@
 package presentacio;
 
-
+import java.util.Date;
 import java.util.Set;
 import javax.swing.JFrame;
 import domini.HotelInformation;
@@ -14,9 +14,9 @@ public class VistaReservarHabitacio {
 		v.setVisible(true);
 	}
 	
-	public void mostraHotels(Set<HotelInformation> hotels) {
+	public void mostraHotels(Set<HotelInformation> hotels, String pob, Date dIni, Date dFi, Integer numOcup) {
 		View2.getWindows()[0].dispose();
-		View3 v = new View3(hotels);
+		View3 v = new View3(hotels, pob, dIni, dFi, numOcup);
 		v.setVisible(true);	
 	}
 	

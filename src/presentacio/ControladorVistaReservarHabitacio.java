@@ -4,7 +4,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Set;
-
 import domini.ControladorReservarHabitacio;
 import domini.ReservaInformation;
 import domini.HotelInformation;
@@ -51,7 +50,7 @@ public class ControladorVistaReservarHabitacio {
 			} catch (NumberFormatException nfe) { throw new Exception ("sNumOcupNoValid"); }
 			if (numOcup <= 0) throw new Exception ("numOcupNoOk");
 			Set<HotelInformation> hotels = controladorReservarHabitacio.buscarHabitacio(pob, dIni, dFi, numOcup);
-			vistaReservarHabitacio.mostraHotels(hotels);
+			vistaReservarHabitacio.mostraHotels(hotels, pob, dIni, dFi, numOcup);
 		} catch (Exception e) {
 			switch (e.getMessage()) {
 				case "faltenDades":
