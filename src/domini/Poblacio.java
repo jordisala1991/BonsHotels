@@ -35,7 +35,7 @@ public class Poblacio {
 		this.hotels = hotels;
 	}
 
-	public Set<HotelInformation> buscarHotelsDisponibles(Date dIni, Date dFi, int numOcup) throws Exception {
+	public Set<HotelInformation> buscarHotelsDisponibles(Date dIni, Date dFi, Integer numOcup) throws Exception {
 		Set<HotelInformation> hotelsinfo = new HashSet<HotelInformation>();
 		Iterator<Hotel> it = hotels.iterator();
 		while (it.hasNext()) {
