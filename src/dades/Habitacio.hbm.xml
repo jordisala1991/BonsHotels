@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="domini.Habitacio" table="HABITACIO">
+  <composite-id class="dades.HabitacioId">
+  	<key-property name="nomHotel"/>
+  	<key-property name="numero"/>
+  </composite-id>
+  <many-to-one name="hotel" class="domini.Hotel" column="NOMHOTEL" cascade="all"/>
+  <set name="reserva" cascade="all"> 
+     <key column="NOMHOTEL"/> 
+     <key column="NUMERO"/> 
+     <one-to-many class="domini.Reserva"/> 
+  </set>
+ </class>
+</hibernate-mapping>
