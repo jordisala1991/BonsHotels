@@ -16,7 +16,7 @@
   <property name="preuTotal" type="java.lang.Float" column="PREUTOTAL"/>
   <many-to-one name="client" class="domini.Client" column="DNICLIENT" cascade="all"/>
   <many-to-one name="habitacio" class="domini.Habitacio" cascade="all">
-  	<column name="DNICLIENT"></column>
+  	<column name="NOMHOTEL"></column>
   	<column name="NUMEROHABITACIO"></column>
   </many-to-one>
  </class>
