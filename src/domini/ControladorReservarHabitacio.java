@@ -2,6 +2,9 @@ package domini;
 
 import java.util.Date;
 import java.util.Set;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import dades.HibernateUtil;
 
 public class ControladorReservarHabitacio {
 	
@@ -73,9 +76,12 @@ public class ControladorReservarHabitacio {
 			String id = BonsHotels.getInstance().getReservationId();
 			Date today = new Date();
 			Reserva r = new Reserva(today, this.dInici, this.dFinal, id, this.preuTotal, c, h);
-			r.setClient(c);
-			h.afegirReserva(r);
-			r.setHabitacio(h);	
+			Session session = HibernateUtil.getSessionFactory().openSession();
+			Transaction transaction = session.beginTransaction();
+			session.save(r);
+			transaction.commit();
+			session.close();
 		}
 	}
+	
 }
