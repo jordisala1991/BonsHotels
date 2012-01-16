@@ -73,7 +73,7 @@ public class ControladorVistaReservarHabitacio {
 	
 	public void PrOKSeleccionarHabitacio(String hotel, String tipusHab) {
 		try {
-			if (hotel.equals(null) || tipusHab.equals(null)) throw new Exception ("faltenDades");
+			if (hotel == null || tipusHab == null) throw new Exception ("faltenDades");
 			ReservaInformation res = controladorReservarHabitacio.seleccionarHabitacio(hotel, tipusHab);
 			vistaReservarHabitacio.mostraPreu(res);
 		} catch (Exception e) {
