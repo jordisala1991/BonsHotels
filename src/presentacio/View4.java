@@ -46,7 +46,7 @@ public class View4 extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Població:");
-		lblNewLabel_1.setBounds(22, 79, 46, 14);
+		lblNewLabel_1.setBounds(22, 79, 68, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Data inici:");
@@ -62,7 +62,7 @@ public class View4 extends JFrame {
 		contentPane.add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("Tipus Habitació:");
-		lblNewLabel_5.setBounds(22, 239, 81, 14);
+		lblNewLabel_5.setBounds(22, 239, 95, 14);
 		contentPane.add(lblNewLabel_5);
 		
 		JLabel lblNewLabel_6 = new JLabel("Preu:");
@@ -105,14 +105,14 @@ public class View4 extends JFrame {
 		
 		hotel = new JTextField();
 		hotel.setEditable(false);
-		hotel.setBounds(111, 39, 100, 20);
+		hotel.setBounds(130, 36, 100, 20);
 		contentPane.add(hotel);
 		hotel.setColumns(10);
 		hotel.setText(res.getHotel());
 		
 		poblacio = new JTextField();
 		poblacio.setEditable(false);
-		poblacio.setBounds(111, 79, 100, 20);
+		poblacio.setBounds(130, 76, 100, 20);
 		contentPane.add(poblacio);
 		poblacio.setColumns(10);
 		poblacio.setText(res.getPob());
@@ -121,21 +121,21 @@ public class View4 extends JFrame {
 		
 		sIn = new JTextField();
 		sIn.setEditable(false);
-		sIn.setBounds(111, 119, 100, 20);
+		sIn.setBounds(130, 116, 100, 20);
 		contentPane.add(sIn);
 		sIn.setColumns(10);
 		sIn.setText(sdf.format(res.getdIni()));
 		
 		sFi = new JTextField();
 		sFi.setEditable(false);
-		sFi.setBounds(111, 159, 100, 20);
+		sFi.setBounds(130, 156, 100, 20);
 		contentPane.add(sFi);
 		sFi.setColumns(10);
 		sFi.setText(sdf.format(res.getdFi()));
 		
 		sNits = new JTextField();
 		sNits.setEditable(false);
-		sNits.setBounds(111, 199, 100, 20);
+		sNits.setBounds(130, 196, 100, 20);
 		contentPane.add(sNits);
 		sNits.setColumns(10);
         long diferencia = res.getdFi().getTime() - res.getdIni().getTime();
@@ -145,20 +145,20 @@ public class View4 extends JFrame {
 		
 		tipusHab = new JTextField();
 		tipusHab.setEditable(false);
-		tipusHab.setBounds(111, 239, 100, 20);
+		tipusHab.setBounds(130, 236, 100, 20);
 		contentPane.add(tipusHab);
 		tipusHab.setColumns(10);
 		tipusHab.setText(res.getTipusHab());
 		
 		sPreu = new JTextField();
 		sPreu.setEditable(false);
-		sPreu.setBounds(111, 279, 100, 20);
+		sPreu.setBounds(130, 276, 100, 20);
 		contentPane.add(sPreu);
 		sPreu.setColumns(10);
 		sPreu.setText(String.valueOf(res.getPreuTotal()));
 		
 		dni = new JTextField();
-		dni.setBounds(111, 319, 100, 20);
+		dni.setBounds(130, 316, 100, 20);
 		contentPane.add(dni);
 		dni.setColumns(10);
 	}
