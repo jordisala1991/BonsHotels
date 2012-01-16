@@ -1,6 +1,5 @@
 package presentacio;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
 import javax.swing.JFrame;
