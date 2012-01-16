@@ -16,6 +16,7 @@ public class BonsHotels implements java.io.Serializable {
 		
 	}
 	
+	
 	public static BonsHotels getInstance() throws Exception {
 		if (instance == null) {
 			try {
@@ -49,4 +50,36 @@ public class BonsHotels implements java.io.Serializable {
 		return "123";
 	}
 	
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((quotaFixa == null) ? 0 : quotaFixa.hashCode());
+		result = prime * result
+				+ ((quotaVariable == null) ? 0 : quotaVariable.hashCode());
+		
+		return result;
+	}
+
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		BonsHotels other = (BonsHotels) obj;
+		if (quotaFixa == null) {
+			if (other.quotaFixa != null)
+				return false;
+		} else if (!quotaFixa.equals(other.quotaFixa))
+			return false;
+		if (quotaVariable== null) {
+			if (other.quotaVariable != null)
+				return false;
+		} else if (!quotaVariable.equals(other.quotaVariable))
+			return false;
+		
+		return true;
+	}
 }
+
