@@ -2,7 +2,6 @@ package presentacio;
 
 import java.util.Date;
 import java.util.Set;
-import javax.swing.JFrame;
 import domini.HotelInformation;
 import domini.ReservaInformation;
 
