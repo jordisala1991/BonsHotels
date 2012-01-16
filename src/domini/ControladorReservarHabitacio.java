@@ -27,6 +27,9 @@ public class ControladorReservarHabitacio {
 	}
 	
 	public Set<HotelInformation> buscarHabitacio(String pob, Date dIni, Date dFi, Integer numOcup) throws Exception {
+		this.poblacio = pob;
+		this.dInici = dIni;
+		this.dFinal = dFi;
 		ControladorBuscarHabitacio cbh = new ControladorBuscarHabitacio();
 		return cbh.buscarHabitacio(pob, dIni, dFi, numOcup);
 	}
