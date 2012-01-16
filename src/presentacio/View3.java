@@ -103,8 +103,8 @@ public class View3 extends JFrame {
 		pane1 = new JScrollPane();
 		pane1.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		pane1.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		pane1.setLocation(94, 130);
-		pane1.setSize(160, 80);
+		pane1.setLocation(105, 128);
+		pane1.setSize(149, 80);
 		contentPane.add(pane1);
 		
 		sHotel = new JList<String>();
@@ -113,8 +113,8 @@ public class View3 extends JFrame {
 		pane2 = new JScrollPane();
 		pane2.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		pane2.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		pane2.setLocation(94, 369);
-		pane2.setSize(160, 80);
+		pane2.setLocation(105, 369);
+		pane2.setSize(149, 80);
 		contentPane.add(pane2);
 		
 		sTipusHab = new JList<String>();
@@ -164,21 +164,25 @@ public class View3 extends JFrame {
 		contentPane.add(sDescripcio);
 				
 		sCategoria = new JTextField();
+		sCategoria.setEditable(false);
 		sCategoria.setColumns(10);
 		sCategoria.setBounds(154, 313, 100, 20);
 		contentPane.add(sCategoria);
 				
 		sAvaluacio = new JTextField();
+		sAvaluacio.setEditable(false);
 		sAvaluacio.setColumns(10);
 		sAvaluacio.setBounds(154, 341, 100, 20);
 		contentPane.add(sAvaluacio);
 		
 		sNombreDisp = new JTextField();
+		sNombreDisp.setEditable(false);
 		sNombreDisp.setColumns(10);
 		sNombreDisp.setBounds(154, 463, 100, 20);
 		contentPane.add(sNombreDisp);
 		
 		sPreu = new JTextField();
+		sPreu.setEditable(false);
 		sPreu.setColumns(10);
 		sPreu.setBounds(154, 491, 100, 20);
 		contentPane.add(sPreu);
