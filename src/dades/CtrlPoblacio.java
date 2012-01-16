@@ -2,7 +2,6 @@ package dades;
 
 import java.util.HashSet;
 import java.util.Set;
-import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import domini.Poblacio;
@@ -20,13 +19,13 @@ public class CtrlPoblacio implements ICtrlPoblacio {
 	}
 
 	public Poblacio getPoblacio(String nomPoblacio) throws Exception {
-		try {
-			Session session = HibernateUtil.getSessionFactory().openSession();
-			Transaction transaction = session.beginTransaction();
-			Poblacio poblacio = (Poblacio) session.get(Poblacio.class, nomPoblacio);
-			transaction.commit();
-			return poblacio;
-		} catch (HibernateException he)  { throw new Exception ("PoblacioNoExisteix"); }
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = session.beginTransaction();
+		Poblacio poblacio = (Poblacio) session.get(Poblacio.class, nomPoblacio);
+		transaction.commit();
+		session.close();
+		if (poblacio == null) throw new Exception("poblacioNoExisteix");
+		return poblacio;
 	}
 
 }
