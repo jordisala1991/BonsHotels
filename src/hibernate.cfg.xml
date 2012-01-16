@@ -9,7 +9,6 @@
   <property name="connection.pool_size">1</property>
   <property name="dialect">org.hibernate.dialect.HSQLDialect</property>
   <property name="current_session_context_class">thread</property>
-  <!-- <property name="show_sql">true</property> -->
   <mapping resource="dades/CategoriaHotel.hbm.xml"/>
   <mapping resource="dades/Hotel.hbm.xml"/>
   <mapping resource="dades/Comentari.hbm.xml"/>

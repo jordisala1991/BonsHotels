@@ -85,8 +85,9 @@ public class Reserva {
 	}
 
 	public Boolean EstaEntre(Date dIni, Date dFi) {
-		return (dIni.before(this.dataInici) && dFi.after(this.dataInici) && dFi.before(this.dataFi)) ||
-			   (dIni.after(this.dataInici)  && dIni.before(this.dataFi)  && dFi.after(this.dataFi))  ||
-			   (dIni.before(this.dataInici) && dFi.after(this.dataFi));
+		return (((dIni.after(dataInici) || dIni.equals(dataInici)) && (dIni.before(dataFi) || dIni.equals(dataFi))) ||
+				((dFi.after(dataInici) || dFi.equals(dataInici)) && (dFi.before(dataFi) || dFi.equals(dataFi))) ||
+				(dIni.before(dataInici) && dFi.after(dataFi)));
 	}
+	
 }

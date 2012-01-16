@@ -69,8 +69,7 @@ public class TipusHabitacio {
 					++disponibles;
 			}
 		}
-		Float f = new Float(-1);
-		TipusHabInformation thi = new TipusHabInformation(nom,disponibles,f);
+		TipusHabInformation thi = new TipusHabInformation(nom,disponibles, null);
 		return thi;
 	}
 	
