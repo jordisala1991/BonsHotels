@@ -1,5 +1,7 @@
 package presentacio;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Set;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -85,7 +87,10 @@ public class View2 extends JFrame {
 		contentPane.add(pane);
 		poblacions = new JList<String>();
 		pane.setViewportView(poblacions);
-		poblacions.setListData((String[]) pb.toArray());
+		Iterator<String> it = pb.iterator();
+		String[] pbs = new String[pb.size()];
+		for (int i = 0; i < pb.size(); ++i) pbs[i] = it.next();
+		poblacions.setListData(pbs);
 		sIni = new JTextField();
 		sIni.setColumns(10);
 		sIni.setBounds(154, 107, 100, 20);
