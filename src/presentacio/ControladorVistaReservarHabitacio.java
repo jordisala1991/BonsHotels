@@ -31,7 +31,7 @@ public class ControladorVistaReservarHabitacio {
 	
 	public void PrOKObteHotels(String pob, String sIni, String sFi, String sNumOcup) {
 		try {
-			if (pob.equals(null) || sIni.equals("") || sFi.equals("") || sNumOcup.equals("")) 
+			if (pob == null || sIni.equals("") || sFi.equals("") || sNumOcup.equals("")) 
 				throw new Exception ("faltenDades");
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy");
 			sdf.setLenient(false);

@@ -15,7 +15,7 @@ public class CtrlClient implements ICtrlClient {
 			Client client = (Client) session.get(Client.class, dni);
 			transaction.commit();
 			return client;
-		} catch (HibernateException he)  { throw new Exception ("ClientNoExisteix"); } 
+		} catch (HibernateException he)  { throw new Exception ("clientNoExisteix"); } 
 	}
 
 }

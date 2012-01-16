@@ -38,13 +38,11 @@ public class VistaReservarHabitacio {
 	}
 	
 	public void mostraMissatge(String nomView, String text) {
-		switch (nomView) {
-			case "View1": View1.mostraMissatge(text);
-			case "View2": View2.mostraMissatge(text);
-			case "View3": View3.mostraMissatge(text);
-			case "View4": View4.mostraMissatge(text);
-			case "View5": View5.mostraMissatge(text);
-		}
+		if (nomView.equals("View1")) View1.mostraMissatge(text);
+		else if (nomView.equals("View2")) View2.mostraMissatge(text);
+		else if (nomView.equals("View3")) View3.mostraMissatge(text);
+		else if (nomView.equals("View4")) View4.mostraMissatge(text);
+		else if (nomView.equals("View5")) View5.mostraMissatge(text);
 	}
 	
 	public void tancar() {
