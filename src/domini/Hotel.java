@@ -71,7 +71,7 @@ public class Hotel {
 		this.preuTipusHabitacio = preuTipusHabitacio;
 	}
 	
-	public HotelInformation buscarHabsHotel(Date dIni, Date dFi, int numOcup) {
+	public HotelInformation buscarHabsHotel(Date dIni, Date dFi, Integer numOcup) {
 		HotelInformation hotel = new HotelInformation();
 		Set<TipusHabInformation> habs = new HashSet<TipusHabInformation>();
 		Iterator<PreuTipusHabitacio> it = preuTipusHabitacio.iterator();
@@ -98,7 +98,7 @@ public class Hotel {
 	public ReservaInformation seleccionarHabitacio(Date dIni, Date dFi, String tipusHab) {
 		ReservaInformation res = new ReservaInformation();
 		float preu = 0;
-		int numHab = 0;
+		Integer numHab = new Integer(0);
 		Iterator<PreuTipusHabitacio> it = preuTipusHabitacio.iterator();
 		while (it.hasNext()) {
 			PreuTipusHabitacio pth = it.next();

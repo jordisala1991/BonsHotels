@@ -56,7 +56,7 @@ public class PreuTipusHabitacio {
 		return thi;
 	}
 	
-	public int obteHabitacio(Date dIni, Date dFi, String nomH) {
+	public Integer obteHabitacio(Date dIni, Date dFi, String nomH) {
 		return this.tipusHab.obteHabitacio(dIni, dFi, nomH);
 	}
 	

@@ -44,7 +44,7 @@ public class ControladorVistaReservarHabitacio {
 			} catch (ParseException pe) { throw new Exception ("sFiNoValida"); }
 			if (!dIni.after(new Date())) throw new Exception ("dIniNoPosteriorAvui");
 			if (!dFi.after(dIni)) throw new Exception ("dFiNoPosteriordIni");
-			int numOcup;
+			Integer numOcup;
 			try {
 				numOcup = Integer.parseInt(sNumOcup);
 			} catch (NumberFormatException nfe) { throw new Exception ("sNumOcupNoValid"); }
