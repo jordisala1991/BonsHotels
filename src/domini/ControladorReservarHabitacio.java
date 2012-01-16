@@ -1,5 +1,6 @@
 package domini;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Set;
 import org.hibernate.Session;
@@ -79,12 +80,14 @@ public class ControladorReservarHabitacio {
 			String id = BonsHotels.getInstance().getReservationId();
 			Date today = new Date();
 			Reserva r = new Reserva(today, this.dInici, this.dFinal, id, this.preuTotal, c, h);
-			System.out.println(r.getDataReserva()+" "+r.getDataInici()+" "+r.getDataFi()+" "+r.getPreuTotal()+" "+r.getClient().getNom()+" "+r.getIdReserva()+" "+r.getHabitacio().getHotel().getNom());
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			Session session = HibernateUtil.getSessionFactory().openSession();
 			Transaction transaction = session.beginTransaction();
-			//session.save(r);
+			session.createSQLQuery("insert into reserva values('"+r.getClient().getDni()+"','"+
+					r.getHabitacio().getHotel().getNom()+"',"+r.getHabitacio().getNumero()+",'"+
+					sdf.format(r.getDataInici())+"','"+sdf.format(r.getDataReserva())+"','"+
+					sdf.format(r.getDataFi())+"','"+r.getIdReserva()+"',"+r.getPreuTotal()+"E0)").executeUpdate();
 			transaction.commit();
 		}
 	}
-	
 }
