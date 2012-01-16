@@ -1,7 +1,6 @@
 package presentacio;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.Set;
@@ -185,9 +184,9 @@ public class View3 extends JFrame {
 		contentPane.add(sPreu);
 		
 		Iterator<HotelInformation> it = hotels.iterator();
-		ArrayList<String> array_hotels = new ArrayList<String>();
-		while (it.hasNext()) array_hotels.add(it.next().getNomHotel());
-		sHotel.setListData((String[]) array_hotels.toArray());
+		String[] array_hotels = new String[hotels.size()];
+		for (int i = 0; i < hotels.size(); ++i) array_hotels[i] = it.next().getNomHotel();
+		sHotel.setListData(array_hotels);
 		
 		sHotel.addMouseListener(new MouseAdapter() {
 			@Override
@@ -202,10 +201,11 @@ public class View3 extends JFrame {
 				sDescripcio.setText(hi.getDesc());
 				sCategoria.setText(hi.getCategoria());
 				sAvaluacio.setText(String.valueOf(hi.getAvaluacio()));
-				Iterator<TipusHabInformation> it3 = hi.getHabs().iterator();
-				ArrayList<String> array_tipusHab = new ArrayList<String>();
-				while (it3.hasNext()) array_tipusHab.add(it3.next().getNom());
-				sTipusHab.setListData((String[]) array_tipusHab.toArray());
+				Iterator<TipusHabInformation> it2 = hi.getHabs().iterator();
+				
+				String[] array_tipusHab = new String[hi.getHabs().size()];
+				for (int i = 0; i < hi.getHabs().size(); ++i) array_tipusHab[i] = it2.next().getNom();
+				sTipusHab.setListData(array_tipusHab);
 				sNombreDisp.setText("");
 				sPreu.setText("");
 			}
