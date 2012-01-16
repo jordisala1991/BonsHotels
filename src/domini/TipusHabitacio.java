@@ -55,7 +55,7 @@ public class TipusHabitacio {
 		this.habitacions = hs;
 	}
 
-	public boolean esDelTipus(String tipusHab) {
+	public Boolean esDelTipus(String tipusHab) {
 		return tipusHab.equals(this.nom);
 	}
 	

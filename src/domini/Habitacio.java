@@ -49,7 +49,7 @@ public class Habitacio {
 	}
 	
 	public Boolean estaDisponible(Date dIni, Date dFi) {
-		boolean estaLliure = true;
+		Boolean estaLliure = new Boolean(true);
 		Iterator<Reserva> it = this.reserva.iterator();
 		while(it.hasNext() && estaLliure) 
 			if (it.next().EstaEntre(dIni, dFi)) estaLliure = false;

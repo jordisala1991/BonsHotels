@@ -81,7 +81,7 @@ public class Hotel {
 			if (thab.getNum() > 0) habs.add(thab);
 		}
 		Iterator<Comentari> it2 = comentari.iterator();
-		float av = 0;
+		Float av = new Float(0);
 		while (it2.hasNext()) av += it2.next().getAvaluacio();
 		hotel.setNomHotel(nom);
 		hotel.setDesc(descripcio);
@@ -97,7 +97,7 @@ public class Hotel {
 	
 	public ReservaInformation seleccionarHabitacio(Date dIni, Date dFi, String tipusHab) {
 		ReservaInformation res = new ReservaInformation();
-		float preu = 0;
+		Float preu = new Float(0);
 		Integer numHab = new Integer(0);
 		Iterator<PreuTipusHabitacio> it = preuTipusHabitacio.iterator();
 		while (it.hasNext()) {
