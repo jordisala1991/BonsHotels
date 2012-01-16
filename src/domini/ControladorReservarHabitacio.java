@@ -79,11 +79,11 @@ public class ControladorReservarHabitacio {
 			String id = BonsHotels.getInstance().getReservationId();
 			Date today = new Date();
 			Reserva r = new Reserva(today, this.dInici, this.dFinal, id, this.preuTotal, c, h);
+			System.out.println(r.getDataReserva()+" "+r.getDataInici()+" "+r.getDataFi()+" "+r.getPreuTotal()+" "+r.getClient().getNom()+" "+r.getIdReserva()+" "+r.getHabitacio().getHotel().getNom());
 			Session session = HibernateUtil.getSessionFactory().openSession();
 			Transaction transaction = session.beginTransaction();
-			session.save(r);
+			//session.save(r);
 			transaction.commit();
-			session.close();
 		}
 	}
 	

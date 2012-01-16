@@ -6,7 +6,7 @@
   <id column="NOM" name="nom" type="java.lang.String"/>
   <set name="hotels" cascade="all"> 
     <key column="NOMPOBLACIO"/> 
-    <one-to-many class="domini.Hotel" />
+    <one-to-many class="domini.Hotel"/>
   </set>
  </class>
 </hibernate-mapping>

@@ -12,7 +12,6 @@ public class CtrlHabitacio implements ICtrlHabitacio {
 			Transaction transaction = session.beginTransaction();
 			Habitacio habitacio = (Habitacio) session.get(Habitacio.class, new HabitacioId(nomH, numero));
 			transaction.commit();
-			session.close();
 			if (habitacio == null) throw new Exception("habitacioNoExisteix");
 			return habitacio;
 	}

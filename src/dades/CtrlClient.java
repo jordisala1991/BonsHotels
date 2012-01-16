@@ -12,7 +12,6 @@ public class CtrlClient implements ICtrlClient {
 		Transaction transaction = session.beginTransaction();
 		Client client = (Client) session.get(Client.class, dni);
 		transaction.commit();
-		session.close();
 		if (client == null) throw new Exception("clientNoExisteix");
 		return client;
 	}

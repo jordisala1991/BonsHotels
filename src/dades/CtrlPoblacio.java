@@ -23,7 +23,6 @@ public class CtrlPoblacio implements ICtrlPoblacio {
 		Transaction transaction = session.beginTransaction();
 		Poblacio poblacio = (Poblacio) session.get(Poblacio.class, nomPoblacio);
 		transaction.commit();
-		session.close();
 		if (poblacio == null) throw new Exception("poblacioNoExisteix");
 		return poblacio;
 	}

@@ -8,7 +8,7 @@
   <property name="descripcio" type="java.lang.String" column="DESCRIPCIO"/>
   <set name="habitacions" cascade="all"> 
     <key column="NOMTIPUSHABITACIO"/> 
-    <one-to-many class="domini.Habitacio" />
+    <one-to-many class="domini.Habitacio"/>
   </set>
  </class>
 </hibernate-mapping>

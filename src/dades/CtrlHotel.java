@@ -12,7 +12,6 @@ public class CtrlHotel implements ICtrlHotel {
 		Transaction transaction = session.beginTransaction();
 		Hotel hotel = (Hotel) session.get(Hotel.class, nom);
 		transaction.commit();
-		session.close();
 		if (hotel == null) throw new Exception("hotelNoExisteix");
 		return hotel;
 	}
