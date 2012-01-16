@@ -14,25 +14,25 @@ public class VistaReservarHabitacio {
 	}
 	
 	public void mostraHotels(Set<HotelInformation> hotels, String pob, Date dIni, Date dFi, Integer numOcup) {
-		View2.getWindows()[0].dispose();
+		View2.getWindows()[1].dispose();
 		View3 v = new View3(hotels, pob, dIni, dFi, numOcup);
 		v.setVisible(true);	
 	}
 	
 	public void mostraPreu(ReservaInformation res) {
-		View3.getWindows()[0].dispose();
+		View3.getWindows()[2].dispose();
 		View4 v = new View4(res);
 		v.setVisible(true);		
 	}
 	
 	public void mostraDadesClient(ReservaInformation dades) {
-		View4.getWindows()[0].dispose();
+		View4.getWindows()[3].dispose();
 		View5 v = new View5(dades);
 		v.setVisible(true);	
 	}
 	
 	public void mostraMissatgeFi() {
-		View5.getWindows()[0].dispose();
+		View5.getWindows()[4].dispose();
 		View6 v = new View6();
 		v.setVisible(true);	
 	}
