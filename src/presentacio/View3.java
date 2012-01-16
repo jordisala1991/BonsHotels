@@ -159,6 +159,7 @@ public class View3 extends JFrame {
 		sNumOcup.setText(String.valueOf(numOcup));
 				
 		sDescripcio = new JTextField();
+		sDescripcio.setEditable(false);
 		sDescripcio.setColumns(10);
 		sDescripcio.setBounds(10, 246, 244, 56);
 		contentPane.add(sDescripcio);

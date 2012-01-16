@@ -49,7 +49,7 @@ public class View5 extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Població:");
-		lblNewLabel_1.setBounds(22, 79, 46, 14);
+		lblNewLabel_1.setBounds(22, 79, 70, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Data inici:");
@@ -65,7 +65,7 @@ public class View5 extends JFrame {
 		contentPane.add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("Tipus Habitació:");
-		lblNewLabel_5.setBounds(22, 239, 81, 14);
+		lblNewLabel_5.setBounds(22, 239, 108, 14);
 		contentPane.add(lblNewLabel_5);
 		
 		JLabel lblNewLabel_6 = new JLabel("Preu:");
@@ -120,14 +120,14 @@ public class View5 extends JFrame {
 		areaMessage.setColumns(10);
 		
 		hotel = new JTextField();
-		hotel.setBounds(121, 39, 100, 20);
+		hotel.setBounds(130, 36, 100, 20);
 		hotel.setEditable(false);
 		contentPane.add(hotel);
 		hotel.setColumns(10);
 		hotel.setText(dades.getHotel());
 		
 		poblacio = new JTextField();
-		poblacio.setBounds(121, 79, 100, 20);
+		poblacio.setBounds(130, 76, 100, 20);
 		poblacio.setEditable(false);
 		contentPane.add(poblacio);
 		poblacio.setColumns(10);
@@ -136,14 +136,14 @@ public class View5 extends JFrame {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy");
 		
 		sIn = new JTextField();
-		sIn.setBounds(121, 119, 100, 20);
+		sIn.setBounds(130, 116, 100, 20);
 		sIn.setEditable(false);
 		contentPane.add(sIn);
 		sIn.setColumns(10);		
 		sIn.setText(sdf.format(dades.getdIni()));
 		
 		sFi = new JTextField();
-		sFi.setBounds(121, 159, 100, 20);
+		sFi.setBounds(130, 156, 100, 20);
 		sFi.setEditable(false);
 		contentPane.add(sFi);
 		sFi.setColumns(10);
@@ -151,7 +151,7 @@ public class View5 extends JFrame {
 	
 	
 		sNits = new JTextField();
-		sNits.setBounds(121, 199, 100, 20);
+		sNits.setBounds(130, 196, 100, 20);
 		sNits.setEditable(false);
 		contentPane.add(sNits);
 		sNits.setColumns(10);
@@ -160,21 +160,21 @@ public class View5 extends JFrame {
         sNits.setText(String.valueOf(dias));
 		
 		tipusHab = new JTextField();
-		tipusHab.setBounds(121, 239, 100, 20);
+		tipusHab.setBounds(130, 236, 100, 20);
 		tipusHab.setEditable(false);
 		contentPane.add(tipusHab);
 		tipusHab.setColumns(10);
 		tipusHab.setText(dades.getTipusHab());
 		
 		sPreu = new JTextField();
-		sPreu.setBounds(121, 279, 100, 20);
+		sPreu.setBounds(130, 276, 100, 20);
 		sPreu.setEditable(false);
 		contentPane.add(sPreu);
 		sPreu.setColumns(10);
 		sPreu.setText(String.valueOf(dades.getPreuTotal()));
 		
 		nom = new JTextField();
-		nom.setBounds(121, 319, 100, 20);
+		nom.setBounds(130, 316, 100, 20);
 		nom.setEditable(false);
 		contentPane.add(nom);
 		nom.setColumns(10);
@@ -182,18 +182,18 @@ public class View5 extends JFrame {
 		
 		cognoms = new JTextField();
 		cognoms.setEditable(false);
-		cognoms.setBounds(121, 359, 100, 20);
+		cognoms.setBounds(130, 356, 100, 20);
 		contentPane.add(cognoms);
 		cognoms.setColumns(10);
 		cognoms.setText(dades.getCognoms());
 		
 		numCredit = new JTextField();
-		numCredit.setBounds(121, 399, 100, 20);
+		numCredit.setBounds(130, 396, 100, 20);
 		contentPane.add(numCredit);
 		numCredit.setColumns(10);
 		
 		sdCad = new JTextField();
-		sdCad.setBounds(121, 439, 100, 20);
+		sdCad.setBounds(130, 436, 100, 20);
 		contentPane.add(sdCad);
 		sdCad.setColumns(10);
 	}
